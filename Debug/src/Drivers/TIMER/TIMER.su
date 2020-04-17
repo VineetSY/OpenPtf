@@ -1,0 +1,2 @@
+TIMER.c:47:6:ReloadTimerInit	4	static
+TIMER.c:84:6:TIM2_IRQHandler	8	static

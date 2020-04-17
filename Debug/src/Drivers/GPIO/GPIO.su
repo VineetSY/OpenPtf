@@ -1,0 +1,2 @@
+GPIO.c:33:6:IOPortInit	4	static
+GPIO.c:73:6:IOPinMode	16	static

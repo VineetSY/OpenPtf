@@ -15,7 +15,7 @@ Command-line arguments:  -os linux -ws gtk -arch x86_64
 !MESSAGE Target: STM32, Version: 9.2.0, Build date: 20181203-0921, Installation dir: /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.2.0/ide/
 
 !ENTRY TrueSTUDIO 1 0 2019-05-03 00:28:45.063
-!MESSAGE Workspace: /mnt/c40b90ec-1fbe-4a57-be88-c71d41d9afe9/StuffNew/Workspace/L4New
+!MESSAGE Workspace: /mnt/c40b90ec-1fbe-4a57-be88-c71d41d9afe9/StuffNew/Workspace/OpenPtf
 
 !ENTRY com.atollic.truestudio.integration.processorexpert 0 0 2019-05-03 00:28:47.014
 !MESSAGE Atollic TrueSTUDIO Processor Expert integration is up.
@@ -63,7 +63,7 @@ Command-line arguments:  -os linux -ws gtk -arch x86_64
 !MESSAGE Target: STM32, Version: 9.1.0, Build date: 20181011-1241, Installation dir: /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.1.0/ide/
 
 !ENTRY TrueSTUDIO 1 0 2019-05-03 00:34:44.112
-!MESSAGE Workspace: /mnt/c40b90ec-1fbe-4a57-be88-c71d41d9afe9/StuffNew/Workspace/L4New
+!MESSAGE Workspace: /mnt/c40b90ec-1fbe-4a57-be88-c71d41d9afe9/StuffNew/Workspace/OpenPtf
 
 !ENTRY org.eclipse.jface 2 0 2019-05-03 00:34:45.854
 !MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.

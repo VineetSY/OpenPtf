@@ -29,51 +29,21 @@ SOFTWARE.
 
 /* Includes */
 #include "stm32l4xx.h"
+#include "Types.h"
+#include "GPIO.h"
+#include "TIMER.h"
+
 
 /* Private macro */
-typedef unsigned long int uint32;
-typedef unsigned short int uint16;
-typedef unsigned char uint8;
-typedef signed long int sint32;
-typedef signed short int sint16;
-typedef signed char sint8;
-typedef	struct IOPinCfgTable_st
-{
-	__IO uint32_t AHB2ENR; /*!< RCC->AHB2ENR Reset and clock control - Advanced high performance bus >!*/
-	__IO uint32_t MODER;   /*GPIOA ->MODER GPIO port mode register,*/
-
-} IOPinCfgTable_t;
-
-#define MODE_HIGH (uint8)1
-#define MODE_LOW (uint8)0
-#define INT_PRIORITY_0 (uint32)0
-
-/* Interrupt Priorities are WORD accessible only under ARMv6M                   */
-/* The following MACROS handle generation of the register offset and byte masks */
-#define _BIT_SHIFT(IRQn)         (  ((((uint32_t)(int32_t)(IRQn))         )      &  0x03UL) * 8UL)
-#define _SHP_IDX(IRQn)           ( (((((uint32_t)(int32_t)(IRQn)) & 0x0FUL)-8UL) >>    2UL)      )
-#define _IP_IDX(IRQn)            (   (((uint32_t)(int32_t)(IRQn))                >>    2UL)      )
 
 /* Private variables */
-uint8 VAR_TIM1_UP_TIM16_IRQHandler      = 0;
-uint8 VAR_TIM1_TRG_COM_TIM17_IRQHandler = 0;
-uint8 VAR_TIM1_BRK_TIM15_IRQHandler     = 0;
-uint8 VAR_TIM1_CC_IRQHandler            = 0;
-uint8 VAR_TIM2_IRQHandler = 0;
 
+uint8 VAR_TIM2_IRQHandler 				= FALSE;
 
 /* Private function prototypes */
-void IOPortInit(void);
-void ReloadTimerInit(void);
+
 void LameTask1(void);
 void LameTask2(void);
-void IOPinMode(uint8 Pin, uint8 Mode);
-void TIM1_UP_TIM16_IRQHandler(void);
-void TIM1_TRG_COM_TIM17_IRQHandler(void);
-void TIM1_CC_IRQHandler(void);
-void TIM1_BRK_TIM15_IRQHandler(void);
-void TIM2_IRQHandler(void);
-
 
 /* Private functions */
 
@@ -105,79 +75,9 @@ int main(void)
 
 	while (1)
 	{
-//		i++;
-//		//Turn OFF the LED at port PA5
-//		if(i > 100000)
-//		{
-//			i = 0;
-//			//			LameTask1();
-//			IOPinMode((uint8)1, (uint8)MODE_LOW);
-//		}
-//		else if (i == 50000)
-//		{
-//			//			LameTask2();
-//			IOPinMode((uint8)1, (uint8)MODE_HIGH);
-//		}
-//		else
-//		{
-//			//Do nothing
-//		}
+
+
 	}
-}
-
-void IOPortInit(void)
-{
-	/*Reset and clock control - Advanced high performance bus- Enabling GPIO Port A*/
-	RCC->AHB2ENR |= RCC_AHB2ENR_GPIOAEN;
-
-	//Setup control registers for the LED output
-	//Mode Register for output
-	GPIOA ->MODER |= (GPIO_MODER_MODE5_0 | GPIO_MODER_MODE6_0);
-	GPIOA ->MODER &= ~(GPIO_MODER_MODE5_1 | GPIO_MODER_MODE6_1);
-
-	//Output type register (push pull)
-	GPIOA ->OTYPER &= ~(GPIO_OTYPER_OT5 | GPIO_OTYPER_OT6);
-
-	//SPEED Register (High speed)
-	GPIOA ->OSPEEDR |= GPIO_OSPEEDR_OSPEED5_0 | GPIO_OSPEEDR_OSPEED5_1 | GPIO_OSPEEDR_OSPEED6_0 | GPIO_OSPEEDR_OSPEED6_1;
-
-	//Pull up pull down register
-	GPIOA ->PUPDR &= ~(GPIO_PUPDR_PUPD5 | GPIO_PUPDR_PUPD6);
-
-	//Bit set reset register
-	//Turn ON the LED at PA5 and PA6
-	GPIOA ->BSRR |= (GPIO_BSRR_BS5 | GPIO_BSRR_BS6); //set pin 5,6 on port A
-
-
-	return;
-}
-
-void ReloadTimerInit(void)
-{
-	/*Timer TIM1 clock enable*/
-//	RCC->APB2ENR |= RCC_APB2ENR_TIM2EN;
-	RCC->APB1ENR1 |= RCC_APB1ENR1_TIM2EN;
-
-	/*TIM1 configured as a down counter*/
-	TIM2->CR1 |= TIM_CR1_DIR;
-
-	/*TIM1 Pre-scaler Auto reload register value set to max*/
-	TIM2 ->ARR |= 0xFFFF;
-
-	/*TIM1 update interrupt enable*/
-	TIM2->DIER |= TIM_DIER_UIE;
-
-	/*Enable Interrupt in NVIC*/
-	NVIC->ISER[0U] = (uint32_t)(1UL << (((uint32_t)(int32_t)TIM2_IRQn) & 0x1FUL));
-
-	/*Set Interrupt Priority*/
-	NVIC->IP[_IP_IDX(TIM2_IRQn)]  = ((uint32_t)(NVIC->IP[_IP_IDX(TIM2_IRQn)]  & ~(0xFFUL << _BIT_SHIFT(TIM2_IRQn))) |
-	       (((INT_PRIORITY_0 << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL) << _BIT_SHIFT(TIM2_IRQn)));
-
-	/*TIM1 Counter enabled*/
-	TIM2->CR1 |= TIM_CR1_CEN;
-
-	return;
 }
 
 void LameTask1(void)
@@ -192,77 +92,5 @@ void LameTask2(void)
 	//Boring Task 2 turns On On board led and turns off external led
 	GPIOA ->BSRR |= (GPIO_BSRR_BS5);
 	GPIOA ->BRR |= (GPIO_BRR_BR6);
-}
-
-void IOPinMode(uint8 Pin, uint8 Mode)
-{
-	switch(Mode)
-	{
-		case MODE_LOW:
-			GPIOA ->BRR |= (GPIO_BRR_BR5);
-			GPIOA ->BRR |= (GPIO_BRR_BR6);
-			break;
-
-		case MODE_HIGH:
-			GPIOA ->BSRR |= (GPIO_BSRR_BS6);
-			GPIOA ->BSRR |= (GPIO_BSRR_BS5);
-			break;
-
-		default:
-			break;
-	}
-}
-
-
-void TIM1_UP_TIM16_IRQHandler(void)
-{
-	VAR_TIM1_UP_TIM16_IRQHandler = 1;
-
-	if(TIM1->SR & 0x0001)
-	{
-		IOPinMode((uint8)1, (uint8)MODE_LOW);
-		TIM1->SR &= ~( TIM_SR_UIF );
-		IOPinMode((uint8)1, (uint8)MODE_HIGH);
-	}
-}
-
-void TIM1_TRG_COM_TIM17_IRQHandler(void)
-{
-	VAR_TIM1_TRG_COM_TIM17_IRQHandler = 1;
-}
-
-void TIM1_CC_IRQHandler(void)
-{
-	VAR_TIM1_CC_IRQHandler = 1;
-}
-
-void TIM1_BRK_TIM15_IRQHandler(void)
-{
-	VAR_TIM1_BRK_TIM15_IRQHandler = 1;
-}
-
-void TIM2_IRQHandler(void)
-{
-	VAR_TIM2_IRQHandler = 1;
-	static uint32 i;
-	i++;
-	//Turn OFF the LED at port PA5
-	if(i > 100000)
-	{
-		i = 0;
-		//			LameTask1();
-		IOPinMode((uint8)1, (uint8)MODE_LOW);
-	}
-	else if (i == 50000)
-	{
-		//			LameTask2();
-		IOPinMode((uint8)1, (uint8)MODE_HIGH);
-	}
-	else
-	{
-		//Do nothing
-	}
-
-	return;
 }
 
