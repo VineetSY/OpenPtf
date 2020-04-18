@@ -32,18 +32,14 @@ SOFTWARE.
 #include "Types.h"
 #include "GPIO.h"
 #include "TIMER.h"
+#include "INTRPT.h"
 
 
 /* Private macro */
 
 /* Private variables */
 
-uint8 VAR_TIM2_IRQHandler 				= FALSE;
-
 /* Private function prototypes */
-
-void LameTask1(void);
-void LameTask2(void);
 
 /* Private functions */
 
@@ -56,8 +52,6 @@ void LameTask2(void);
 */
 int main(void)
 {
-	unsigned long int i = 0;
-
 	/**
 	*  IMPORTANT NOTE!
 	*  The symbol VECT_TAB_SRAM needs to be defined when building the project
@@ -69,28 +63,17 @@ int main(void)
 	*/
 
 	/* TODO - Add your application code here */
-	IOPortInit();
-	ReloadTimerInit();
+
+	/* System Initialization */
+	GPIO_Port_Init();
+	TIMER_RLT_Init();
+
+
 	/* Infinite loop */
 
 	while (1)
 	{
-
-
+		/*Do nothing*/
 	}
-}
-
-void LameTask1(void)
-{
-	//Boring Task 1 turns off On board led and turns on external led
-	GPIOA ->BRR |= (GPIO_BRR_BR5);
-	GPIOA ->BSRR |= (GPIO_BSRR_BS6);
-}
-
-void LameTask2(void)
-{
-	//Boring Task 2 turns On On board led and turns off external led
-	GPIOA ->BSRR |= (GPIO_BSRR_BS5);
-	GPIOA ->BRR |= (GPIO_BRR_BR6);
 }
 
