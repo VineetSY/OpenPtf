@@ -1,0 +1,2 @@
+CLOCK.c:56:6:CLOCK_Init	8	static
+CLOCK.c:86:6:CLOCK_SysClk_Config	16	static

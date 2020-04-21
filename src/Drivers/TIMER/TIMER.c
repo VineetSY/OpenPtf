@@ -56,10 +56,6 @@
  *************************************************************************************************/
 void TIMER_RLT_Init(void)
 {
-	/*Timer TIM1 clock enable*/
-//	RCC->APB2ENR |= RCC_APB2ENR_TIM2EN;
-	RCC->APB1ENR1 |= RCC_APB1ENR1_TIM2EN;
-
 	/*TIM1 configured as a down counter*/
 	TIM2->CR1 |= TIM_CR1_DIR;
 

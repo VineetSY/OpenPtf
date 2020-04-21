@@ -33,6 +33,7 @@ SOFTWARE.
 #include "GPIO.h"
 #include "TIMER.h"
 #include "INTRPT.h"
+#include "CLOCK.h"
 
 
 /* Private macro */
@@ -43,47 +44,7 @@ SOFTWARE.
 
 /* Private functions */
 
-void System_Clock_Init(void)
-{
 
-	/* Enable High Speed Internal Clock (HSI = 16 MHz) */
-	RCC->CR |= ((uint32_t)RCC_CR_HSION);
-
-	/* wait until HSI is ready*/
-	while ( (RCC->CR & (uint32_t) RCC_CR_HSIRDY) == 0 ) {;}
-
-	/* Select HSI as system clock source*/
-	RCC->CFGR &= (uint32_t)((uint32_t)~(RCC_CFGR_SW));
-	RCC->CFGR |= (uint32_t)RCC_CFGR_SW_HSI;  //01: HSI16 oscillator used as system clock
-
-	/* Wait till HSI is used as system clock source*/
-	while ((RCC->CFGR & (uint32_t)RCC_CFGR_SWS) == 0 ) {;}
-
-	/* Multi Speed Internal Clock (MSI = 48MHz) */
-
-	/*MSI can be configured when OFF*/
-	RCC->CR &= ~(RCC_CR_MSION);
-
-	/*Clear MSIRANGE in CR register and then Configure it for Range 11 ie 48MHz*/
-	RCC->CR &= ~(RCC_CR_MSIRANGE);
-	RCC->CR |= RCC_CR_MSIRANGE_11;
-
-	/*Select MSI range from CR register*/
-	RCC->CR |= RCC_CR_MSIRGSEL;
-	/*Turn ON MSI and then wait for it to get Ready*/
-	RCC->CR |= (RCC_CR_MSION);
-	while((RCC->CR & RCC_CR_MSIRDY) == 0) {;}
-
-	/*Flash wait latency for 48mhz HCLK is 2WS*/
-	FLASH->ACR &= ~(FLASH_ACR_LATENCY_0WS);
-	FLASH->ACR |= (FLASH_ACR_LATENCY_2WS);
-
-	/*Switch Main clock to MSI*/
-	RCC->CFGR &= ~(RCC_CFGR_SW);
-	RCC->CFGR |= (uint32_t)RCC_CFGR_SW_MSI;
-
-	return;
-}
 
 /**
 **===========================================================================
@@ -107,8 +68,8 @@ int main(void)
 	/* TODO - Add your application code here */
 
 	/* System Initialization */
-	System_Clock_Init();
-	GPIO_Port_Init();
+	CLOCK_Init();
+	GPIO_Init();
 	TIMER_RLT_Init();
 
 

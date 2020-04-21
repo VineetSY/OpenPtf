@@ -21,7 +21,6 @@
  *************************************************************************************************/
 typedef	struct IOPinCfgTable_st
 {
-	__IO uint32_t AHB2ENR; /* RCC->AHB2ENR Reset and clock control - Advanced high performance bus */
 	__IO uint32_t MODER0;  /* GPIO port mode register 0 value*/
 	__IO uint32_t MODER1;  /* GPIO port mode register 1 value*/
 	__IO uint32_t OTYPER;
@@ -36,11 +35,11 @@ typedef	struct IOPinCfgTable_st
 /*************************************************************************************************
  *	Private variables
  *************************************************************************************************/
-IOPinCfgTable_t IOPinCfg[TOTAL_GPIO_PIN] =
+static IOPinCfgTable_t IOPinCfg[TOTAL_GPIO_PIN] =
 {
-	/* AHB2ENR,            MODER0,              MODER1,              OTYPER,           OSPEEDR0,                OSPEEDR1,                PUPDR,             BSRR,           BRR*/
-	{RCC_AHB2ENR_GPIOAEN,  GPIO_MODER_MODE5_0,  GPIO_MODER_MODE5_1,  GPIO_OTYPER_OT5,  GPIO_OSPEEDR_OSPEED5_0,  GPIO_OSPEEDR_OSPEED5_1,  GPIO_PUPDR_PUPD5,  GPIO_BSRR_BS5,  GPIO_BRR_BR5},
-	{RCC_AHB2ENR_GPIOAEN,  GPIO_MODER_MODE6_0,  GPIO_MODER_MODE6_1,  GPIO_OTYPER_OT6,  GPIO_OSPEEDR_OSPEED6_0,  GPIO_OSPEEDR_OSPEED6_1,  GPIO_PUPDR_PUPD6,  GPIO_BSRR_BS6,  GPIO_BRR_BR6}
+	/* MODER0,              MODER1,              OTYPER,           OSPEEDR0,                OSPEEDR1,                PUPDR,             BSRR,           BRR*/
+	{GPIO_MODER_MODE5_0,  GPIO_MODER_MODE5_1,  GPIO_OTYPER_OT5,  GPIO_OSPEEDR_OSPEED5_0,  GPIO_OSPEEDR_OSPEED5_1,  GPIO_PUPDR_PUPD5,  GPIO_BSRR_BS5,  GPIO_BRR_BR5},
+	{GPIO_MODER_MODE6_0,  GPIO_MODER_MODE6_1,  GPIO_OTYPER_OT6,  GPIO_OSPEEDR_OSPEED6_0,  GPIO_OSPEEDR_OSPEED6_1,  GPIO_PUPDR_PUPD6,  GPIO_BSRR_BS6,  GPIO_BRR_BR6}
 };
 
 /*************************************************************************************************
@@ -50,7 +49,7 @@ IOPinCfgTable_t IOPinCfg[TOTAL_GPIO_PIN] =
 /*************************************************************************************************
  *	Private function prototypes
  *************************************************************************************************/
-void GPIO_Pin_Config(GPIO_PinType_e Pin);
+static void GPIO_Pin_Config(GPIO_PinType_e Pin);
 
 /*************************************************************************************************
  *	Function Definitions
@@ -59,7 +58,7 @@ void GPIO_Pin_Config(GPIO_PinType_e Pin);
 
 
 /**************************************************************************************************
- *  @name - GPIO_Port_Init
+ *  @name - GPIO_Init
  *
  *  @summary - Generic function to initialize the GPIO pins
  *
@@ -67,34 +66,11 @@ void GPIO_Pin_Config(GPIO_PinType_e Pin);
  *
  *  @retval- NA
  *************************************************************************************************/
-void GPIO_Port_Init(void)
+void GPIO_Init(void)
 {
-
-	/*Reset and clock control - Advanced high performance bus- Enabling GPIO Port A*/
-	RCC->AHB2ENR |= RCC_AHB2ENR_GPIOAEN;
 
 	GPIO_Pin_Config(GPIO_PA5);
 	GPIO_Pin_Config(GPIO_PA6);
-
-/*
-	//Setup control registers for the LED output
-	//Mode Register for output
-	GPIOA ->MODER |= (GPIO_MODER_MODE5_0 | GPIO_MODER_MODE6_0);
-	GPIOA ->MODER &= ~(GPIO_MODER_MODE5_1 | GPIO_MODER_MODE6_1);
-
-	//Output type register (push pull)
-	GPIOA ->OTYPER &= ~(GPIO_OTYPER_OT5 | GPIO_OTYPER_OT6);
-
-	//SPEED Register (High speed)
-	GPIOA ->OSPEEDR |= GPIO_OSPEEDR_OSPEED5_0 | GPIO_OSPEEDR_OSPEED5_1 | GPIO_OSPEEDR_OSPEED6_0 | GPIO_OSPEEDR_OSPEED6_1;
-
-	//Pull up pull down register
-	GPIOA ->PUPDR &= ~(GPIO_PUPDR_PUPD5 | GPIO_PUPDR_PUPD6);
-
-	//Bit set reset register
-	//Turn ON the LED at PA5 and PA6
-	GPIOA ->BSRR |= (GPIO_BSRR_BS5 | GPIO_BSRR_BS6); //set pin 5,6 on port A
-*/
 
 	return;
 }
@@ -111,21 +87,21 @@ void GPIO_Port_Init(void)
  **************************************************************************************************/
 void GPIO_Pin_Config(GPIO_PinType_e Pin)
 {
-	//Setup control registers
-	//Mode Register for output
+	/*Setup control registers*/
+	/*Mode Register for output*/
 	GPIOA ->MODER |= (IOPinCfg[Pin].MODER0);
 	GPIOA ->MODER &= ~(IOPinCfg[Pin].MODER1);
 
-	//Output type register (push pull)
+	/*Output type register (push pull)*/
 	GPIOA ->OTYPER &= ~(IOPinCfg[Pin].OTYPER);
 
-	//SPEED Register (High speed)
+	/*SPEED Register (High speed)*/
 	GPIOA ->OSPEEDR |= (IOPinCfg[Pin].OSPEEDR0 | IOPinCfg[Pin].OSPEEDR1);
 
-	//Pull up pull down register
+	/*Pull up pull down register*/
 	GPIOA ->PUPDR &= ~(IOPinCfg[Pin].PUPDR);
 
-	//Bit set reset register
+	/*Bit set reset register*/
 	GPIOA ->BSRR |= (IOPinCfg[Pin].BSRR);
 
 	return;
@@ -137,8 +113,12 @@ void GPIO_Pin_Config(GPIO_PinType_e Pin)
  *  @summary - GPIO pin digital output mode update
  *
  *  @param in - Pin: GPIO pin number to select
+ *  				@arg @ref GPIO_PA5  GPIO port a pin 5
+ *  				@arg @ref GPIO_PA6  GPIO port a pin 5
  *
  *  @param in - Mode: output mode for the selected pin
+ *  				@arg @ref MODE_LOW  GPIO pin digital output low mode
+ *  				@arg @ref MODE_HIGH  GPIO pin digital output high mode
  *
  *  @retval- NA
  **************************************************************************************************/
@@ -160,6 +140,4 @@ void GPIO_PinMode_Update(uint8 Pin, uint8 Mode)
 
 	return;
 }
-
-
 
