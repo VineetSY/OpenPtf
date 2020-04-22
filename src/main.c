@@ -70,7 +70,7 @@ int main(void)
 	/* System Initialization */
 	CLOCK_Init();
 	GPIO_Init();
-	TIMER_RLT_Init();
+	/*TIMER_RLT_Init();*/ /*SysTick Timer to be used for time base instead of TIM2*/
 
 
 	/* Infinite loop */

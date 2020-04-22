@@ -14,6 +14,7 @@
  *************************************************************************************************/
 #include "stm32l4xx.h"
 #include "Types.h"
+#include "core_cm4.h"
 
 /*************************************************************************************************
  *	MACRO & Types
@@ -24,6 +25,8 @@
 #define CLOCK_MSI		0x02u
 #define CLOCK_PLL_ON	0x01u
 #define CLOCK_PLL_OFF	0x00u
+
+#define RELOAD_VAL_80MHZ_CLK 80000u
 
 /*************************************************************************************************
  *	Private variables
@@ -63,6 +66,9 @@ void CLOCK_Init(void)
 
 	/*Timer TIM2 clock enable*/
 	RCC->APB1ENR1 |= RCC_APB1ENR1_TIM2EN;
+
+	/*SysTick timer configuration for 80MHz clock source to generate 1ms SysTick*/
+	SysTick_Config((uint32)RELOAD_VAL_80MHZ_CLK);
 
 	return;
 }

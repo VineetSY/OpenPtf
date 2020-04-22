@@ -1,3 +1,0 @@
-GPIO.c:69:6:GPIO_Init	8	static
-GPIO.c:88:6:GPIO_Pin_Config	16	static
-GPIO.c:125:6:GPIO_PinMode_Update	16	static

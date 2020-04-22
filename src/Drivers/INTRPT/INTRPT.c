@@ -15,6 +15,7 @@
 #include "stm32l4xx.h"
 #include "Types.h"
 #include "GPIO.h"
+#include "BLINKY.h"
 
 /*************************************************************************************************
  *	MACRO
@@ -41,6 +42,42 @@
 
 
 /*************************************************************************************************
+ *  @name - SysTick_Handler
+ *
+ *  @summary - SysTick timer default interrupt handler
+ *
+ *  @param - in: IRQn  Interrupt Number Definition
+ *
+ *  @param - in: priority  rogrammable priority level of 0-15 for each interrupt
+ *
+ *  @retval - NA
+ *************************************************************************************************/
+void INTRPT_Config(uint32 IRQn, uint32 priority)
+{
+	NVIC_EnableIRQ(IRQn);
+	NVIC_SetPriority(IRQn, priority);
+
+	return;
+}
+
+/*************************************************************************************************
+ *  @name - SysTick_Handler
+ *
+ *  @summary - SysTick timer default interrupt handler
+ *
+ *  @param - NA
+ *
+ *  @retval - NA
+ *************************************************************************************************/
+void SysTick_Handler(void)
+{
+	BLINKY_LED_Update();
+
+	return;
+}
+
+
+/*************************************************************************************************
  *  @name - TIM2_IRQHandler
  *
  *  @summary - TIM2 timer interrupt handler
@@ -51,24 +88,6 @@
  *************************************************************************************************/
 void TIM2_IRQHandler(void)
 {
-	static uint32 i;
-	i++;
-	//Turn OFF the LED at port PA5
-	if(i > 100000)
-	{
-		i = 0;
-		GPIO_PinMode_Update((uint8)GPIO_PA5, (uint8)MODE_LOW);
-		GPIO_PinMode_Update((uint8)GPIO_PA6, (uint8)MODE_HIGH);
-	}
-	else if (i == 50000)
-	{
-		GPIO_PinMode_Update((uint8)GPIO_PA5, (uint8)MODE_HIGH);
-		GPIO_PinMode_Update((uint8)GPIO_PA6, (uint8)MODE_LOW);
-	}
-	else
-	{
-		//Do nothing
-	}
 
 	return;
 }

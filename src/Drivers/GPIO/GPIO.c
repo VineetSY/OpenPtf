@@ -102,7 +102,7 @@ void GPIO_Pin_Config(GPIO_PinType_e Pin)
 	GPIOA ->PUPDR &= ~(IOPinCfg[Pin].PUPDR);
 
 	/*Bit set reset register*/
-	GPIOA ->BSRR |= (IOPinCfg[Pin].BSRR);
+	GPIOA ->BRR |= (IOPinCfg[Pin].BRR);
 
 	return;
 }
