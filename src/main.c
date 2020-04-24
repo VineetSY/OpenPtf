@@ -34,6 +34,7 @@ SOFTWARE.
 #include "TIMER.h"
 #include "INTRPT.h"
 #include "CLOCK.h"
+#include "PRINT.h"
 
 
 /* Private macro */
@@ -74,9 +75,18 @@ int main(void)
 
 
 	/* Infinite loop */
-
+	uint32 delay = 0;
 	while (1)
 	{
+		if(delay == 100000)
+		{
+			PRINT_String("vineet");
+			delay = 0;
+		}
+		else
+		{
+			delay++;
+		}
 		/*Do nothing*/
 	}
 }

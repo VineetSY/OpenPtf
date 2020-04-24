@@ -57,6 +57,7 @@
 									<listOptionValue builtIn="false" value="../src/Drivers/INTRPT"/>
 									<listOptionValue builtIn="false" value="../src/Drivers/CLOCK"/>
 									<listOptionValue builtIn="false" value="../src/Appl/BLINKY"/>
+									<listOptionValue builtIn="false" value="../src/Bsw/PRINT"/>
 								</option>
 								<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.option.ffunction.2140716962" name="Place functions in their own sections (-ffunction-sections)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.option.ffunction" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 								<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.option.fdata.1948191463" name="Place data in their own sections (-fdata-sections)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.option.fdata" useByScannerDiscovery="false" value="true" valueType="boolean"/>
@@ -163,6 +164,7 @@
 									<listOptionValue builtIn="false" value="../src/Drivers/INTRPT"/>
 									<listOptionValue builtIn="false" value="../src/Drivers/CLOCK"/>
 									<listOptionValue builtIn="false" value="../src/Appl/BLINKY"/>
+									<listOptionValue builtIn="false" value="../src/Bsw/PRINT"/>
 								</option>
 								<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.option.ffunction.1526117601" name="Place functions in their own sections (-ffunction-sections)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.option.ffunction" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 								<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.option.fdata.1764493027" name="Place data in their own sections (-fdata-sections)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.option.fdata" useByScannerDiscovery="false" value="true" valueType="boolean"/>
