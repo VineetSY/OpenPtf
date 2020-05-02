@@ -99,6 +99,7 @@ int main(void)
 		if(delay == 100000)
 		{
 			counter++;
+			GPIO_UsrBtnB1_Update();
 			PRINT_String("Print Count number ", counter);
 			delay = 0;
 			__WFI();

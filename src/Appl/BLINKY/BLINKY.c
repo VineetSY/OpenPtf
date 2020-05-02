@@ -25,7 +25,8 @@
 /*************************************************************************************************
  *	Private variables
  *************************************************************************************************/
-
+uint8 mode = 0;
+GPIO_BtnState_e btnState = BtnNotPressed;
 
 /*************************************************************************************************
  *	Global variables
@@ -53,22 +54,51 @@
 void BLINKY_LED_Update(void)
 {
 	static uint32 i;
+
+
 	i++;
-	//Turn OFF the LED at port PA5
-	if(i > 1000)
+	btnState = GPIO_BtnB1State_Get();
+
+	if(btnState == BtnPressed)
 	{
-		i = 0;
-		GPIO_PinMode_Update((uint8)GPIO_PA5, (uint8)MODE_LOW);
-		GPIO_PinMode_Update((uint8)GPIO_PA6, (uint8)MODE_HIGH);
+		mode = 1;
 	}
-	else if (i == 500)
+	//Turn OFF the LED at port PA5
+	if(mode == 0)
 	{
-		GPIO_PinMode_Update((uint8)GPIO_PA5, (uint8)MODE_HIGH);
-		GPIO_PinMode_Update((uint8)GPIO_PA6, (uint8)MODE_LOW);
+		if(i > 1000)
+		{
+			i = 0;
+			GPIO_PinMode_Update((uint8)GPIO_PA5, (uint8)MODE_LOW);
+			GPIO_PinMode_Update((uint8)GPIO_PA6, (uint8)MODE_HIGH);
+		}
+		else if (i == 500)
+		{
+			GPIO_PinMode_Update((uint8)GPIO_PA5, (uint8)MODE_HIGH);
+			GPIO_PinMode_Update((uint8)GPIO_PA6, (uint8)MODE_LOW);
+		}
+		else
+		{
+			//Do nothing
+		}
 	}
 	else
 	{
-		//Do nothing
+		if(i > 1000)
+		{
+			i = 0;
+			GPIO_PinMode_Update((uint8)GPIO_PA5, (uint8)MODE_HIGH);
+			GPIO_PinMode_Update((uint8)GPIO_PA6, (uint8)MODE_HIGH);
+		}
+		else if (i == 500)
+		{
+			GPIO_PinMode_Update((uint8)GPIO_PA5, (uint8)MODE_LOW);
+			GPIO_PinMode_Update((uint8)GPIO_PA6, (uint8)MODE_LOW);
+		}
+		else
+		{
+			//Do nothing
+		}
 	}
 
 	return;

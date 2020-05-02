@@ -48,6 +48,8 @@ static IOPinCfgTable_t IOPinCfg[TOTAL_GPIO_PIN] =
 	{GPIO_MODER_MODE6_0,  GPIO_MODER_MODE6_1,  GPIO_OTYPER_OT6,  GPIO_OSPEEDR_OSPEED6_0,  GPIO_OSPEEDR_OSPEED6_1,  GPIO_PUPDR_PUPD6,  GPIO_BSRR_BS6,  GPIO_BRR_BR6}
 };
 
+static GPIO_BtnState_e GPIO_BtnB1_State = BtnNotPressed;
+
 /*************************************************************************************************
  *	Global variables
  *************************************************************************************************/
@@ -61,6 +63,63 @@ static void GPIO_Pin_Config(GPIO_PinType_e Pin);
  *	Function Definitions
  *************************************************************************************************/
 
+/**************************************************************************************************
+ *  @name - GPIO_BtnB1State_Get
+ *
+ *  @summary - Button B1 state read
+ *
+ *  @param - NA
+ *
+ *  @retval- NA
+ *************************************************************************************************/
+GPIO_BtnState_e GPIO_BtnB1State_Get(void)
+{
+	return GPIO_BtnB1_State;
+}
+
+/**************************************************************************************************
+ *  @name - GPIO_BtnB1_Config
+ *
+ *  @summary - Nucleo Board User Button B1 at PC13
+ *
+ *  @param - NA
+ *
+ *  @retval- NA
+ *************************************************************************************************/
+void GPIO_BtnB1_Config(void)
+{
+	RCC->AHB2ENR |= RCC_AHB2ENR_GPIOCEN;
+	/*PC13 input pin config*/
+	GPIOC ->MODER &= ~(GPIO_MODER_MODE13);
+	GPIOC ->OSPEEDR &= ~(GPIO_OSPEEDER_OSPEEDR13);
+	GPIOC ->PUPDR &= ~(GPIO_OSPEEDER_OSPEEDR13);
+
+	return;
+}
+
+/**************************************************************************************************
+ *  @name - GPIO_UsrBtnB1_Update
+ *
+ *  @summary - Button B1 state
+ *
+ *  @param - NA
+ *
+ *  @retval- NA
+ *************************************************************************************************/
+void GPIO_UsrBtnB1_Update(void)
+{
+	/*TODO: ADD debounce logic*/
+	if ( !(GPIOC->IDR & GPIO_IDR_ID13) )
+	{
+		GPIO_BtnB1_State = BtnPressed;
+	}
+	else
+	{
+		GPIO_BtnB1_State = BtnNotPressed;
+	}
+
+	return ;
+}
 
 
 /**************************************************************************************************
@@ -77,6 +136,7 @@ void GPIO_Init(void)
 
 	GPIO_Pin_Config(GPIO_PA5);
 	GPIO_Pin_Config(GPIO_PA6);
+	GPIO_BtnB1_Config();
 
 	return;
 }

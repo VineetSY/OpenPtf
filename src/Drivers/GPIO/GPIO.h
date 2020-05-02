@@ -27,7 +27,13 @@ typedef enum
 	GPIO_PA5 = 0,
 	GPIO_PA6,
 	TOTAL_GPIO_PIN
-}GPIO_PinType_e;
+} GPIO_PinType_e;
+
+typedef enum
+{
+	BtnPressed = 0,
+	BtnNotPressed
+} GPIO_BtnState_e;
 
 /*************************************************************************************************
  *	Private variables
@@ -44,7 +50,8 @@ typedef enum
  *************************************************************************************************/
 void GPIO_Init(void);
 void GPIO_PinMode_Update(uint8 Pin, uint8 Mode);
-
+void GPIO_UsrBtnB1_Update(void);
+GPIO_BtnState_e GPIO_BtnB1State_Get(void);
 /*************************************************************************************************
  *	Function Definitions
  *************************************************************************************************/
