@@ -1,7 +1,7 @@
 /*************************************************************************************************
  * Module name: INTRPT.h
  *
- * Purpose:
+ * Purpose: HW/SW interrupt Implementation Module
  *
  * Created on: 18-Apr-2020
  *

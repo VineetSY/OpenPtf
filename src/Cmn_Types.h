@@ -1,7 +1,7 @@
 /*************************************************************************************************
  * Module name: Cmn_Types.h
  *
- * Purpose:
+ * Purpose: All common typedefs and macros for use in all modules. 
  *
  * Created on: 02-May-2020
  *

@@ -7,7 +7,7 @@
 
     - HSI 16MHZ
     - MSI 48MHZ
-    - PLL 80MHZ (From MSI 48)
+    - PLL 80MHZ (From MSI 48): Currently used.
 ```
 
 ### 2. GPIO Enabled
@@ -16,9 +16,9 @@
     - PORTA Pin5 output mode(External LED)
 ```
 
-### 3.Timer Enabled
+### 3.Systick Enabled
 ```
-    - TIM2 as ReloadTimer (DownCount Autoreload with Interrupt at underflow)
+    - ARM systick timer enabled to generate a 1ms tick from 80MHz clock
 ```
 
 ## Modules
@@ -36,4 +36,14 @@
 ### 3. TIMER
 ```
     - Handling of all Timer functionality including SysTick.
+```
+
+### 4. INTRPT
+```
+    - HW/SW interrupt Implementation Module.
+```
+
+### 5. PRINT
+```
+    - Print message strings. Currently uses ITM module to output strings to IDE console.
 ```

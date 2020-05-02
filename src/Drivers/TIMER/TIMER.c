@@ -1,7 +1,7 @@
 /*************************************************************************************************
  * Module name: TIMER.c
  *
- * Purpose:
+ * Purpose: Handling of all Timer functionality including SysTick.
  *
  * Created on: 18-Apr-2020
  *

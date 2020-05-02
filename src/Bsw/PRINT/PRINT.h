@@ -1,7 +1,8 @@
 /*************************************************************************************************
  * Module name: PRINT.h
  *
- * Purpose:
+ * Purpose:This module provides print functionality to output messages, with a very minimal memory
+ * 			cost. This module can be mapped to use built-in ITM, or external LCD or UART.
  *
  * Created on: 24-Apr-2020
  *

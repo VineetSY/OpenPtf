@@ -1,7 +1,7 @@
 /*************************************************************************************************
  * Module name: GPIO.h
  *
- * Purpose:
+ * Purpose: Configuration of all GPIO pins and PORT modes.
  *
  * Created on: 18-Apr-2020
  *
