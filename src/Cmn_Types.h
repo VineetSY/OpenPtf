@@ -1,38 +1,54 @@
 /*************************************************************************************************
- * Module name: BLINKY.c
+ * Module name: Cmn_Types.h
  *
  * Purpose:
  *
- * Created on: 18-Apr-2020
+ * Created on: 02-May-2020
  *
  * Author: Vineet
  *************************************************************************************************/
+
+#ifndef CMN_TYPES_H_
+#define CMN_TYPES_H_
 
 
 /*************************************************************************************************
  *	Includes
  *************************************************************************************************/
-#include "Cmn_Types.h"
-#include "Project_Cfg.h"
-#if ( _GPIO_MODULE_ == ON )
-# include "GPIO.h"
-#endif
+
 /*************************************************************************************************
  *	MACRO
  *************************************************************************************************/
+#define TRUE  	1u
+#define FALSE 	0u
 
+#define ON	1u
+#define OFF	0u
 
 /*************************************************************************************************
- *	Private variables
+ *	Types
  *************************************************************************************************/
+typedef unsigned long int uint32;
+typedef unsigned short int uint16;
+typedef unsigned char uint8;
+typedef signed long int sint32;
+typedef signed short int sint16;
+typedef signed char sint8;
+typedef _Bool boolean;
 
+typedef enum
+{
+	OK = 0,
+	ERR
+} StdReturnType_e;
 
 /*************************************************************************************************
  *	Global variables
  *************************************************************************************************/
 
+
 /*************************************************************************************************
- *	Private function prototypes
+ *	Function prototypes
  *************************************************************************************************/
 
 
@@ -42,34 +58,13 @@
 
 
 /*************************************************************************************************
- *  @name - BLINKY_LED_Update
+ *  @name - 
  *
- *  @summary - On_board and external LED toggle
+ *  @summary - 
  *
- *  @param - NA
+ *  @param - 
  *
- *  @retval- NA
+ *  @retval- 
  *************************************************************************************************/
-void BLINKY_LED_Update(void)
-{
-	static uint32 i;
-	i++;
-	//Turn OFF the LED at port PA5
-	if(i > 1000)
-	{
-		i = 0;
-		GPIO_PinMode_Update((uint8)GPIO_PA5, (uint8)MODE_LOW);
-		GPIO_PinMode_Update((uint8)GPIO_PA6, (uint8)MODE_HIGH);
-	}
-	else if (i == 500)
-	{
-		GPIO_PinMode_Update((uint8)GPIO_PA5, (uint8)MODE_HIGH);
-		GPIO_PinMode_Update((uint8)GPIO_PA6, (uint8)MODE_LOW);
-	}
-	else
-	{
-		//Do nothing
-	}
 
-	return;
-}
+#endif /* CMN_TYPES_H_ */

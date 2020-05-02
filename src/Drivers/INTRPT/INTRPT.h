@@ -15,7 +15,6 @@
 /*************************************************************************************************
  *	Includes
  *************************************************************************************************/
-#include "core_cm4.h"
 
 /*************************************************************************************************
  *	MACRO
@@ -42,9 +41,9 @@ void SysTick_Handler(void);
  *
  *  @summary - SysTick timer default interrupt handler
  *
- *  @param - in: IRQn  Interrupt Number Definition
+ *  @param [in] - IRQn	Interrupt Number Definition
  *
- *  @param - in: priority  rogrammable priority level of 0-15 for each interrupt
+ *  @param [in]- priority	programmable priority level of 0-15 for each interrupt
  *
  *  @retval - NA
  *************************************************************************************************/

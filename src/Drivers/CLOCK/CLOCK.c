@@ -12,9 +12,13 @@
 /*************************************************************************************************
  *	Includes
  *************************************************************************************************/
-#include "stm32l4xx.h"
-#include "Types.h"
-#include "core_cm4.h"
+#include "Cmn_Types.h"
+#include "Project_Cfg.h"
+#if ( _CLOCK_MODULE_ == ON )
+/*MCU Specific Header File*/
+#if (_MCU_STM32L476RG_ == ON)
+# include "stm32l4xx.h"
+#endif
 
 /*************************************************************************************************
  *	MACRO & Types
@@ -78,11 +82,11 @@ void CLOCK_Init(void)
  *
  *  @summary - System clock Initialization, peripheral clock enable
  *
- *  @param in - ClkSrc: Clock Source for SysClk
+ *  @param [in] - ClkSrc: Clock Source for SysClk
  *  				@arg @ref CLOCK_HSI  HighSpeedInternal 16Mhz clock enable
  *  				@arg @ref CLOCK_MSI  MultiSpeedInternal clock enable
  *
- *  @param in - PllState: PLL state for the SysClk
+ *  @param [in] - PllState: PLL state for the SysClk
  *  				@arg @ref CLOCK_PLL_ON  PLL Output for Sysclk enable
  *  				@arg @ref CLOCK_PLL_OFF  PLL Output for Sysclk disable
  *  				Currently PLL only supported with CLOCK_MSI
@@ -162,3 +166,4 @@ void CLOCK_SysClk_Config(uint32 ClkSrc, uint32 PllState)
 	return;
 }
 
+#endif /*_CLOCK_MODULE_*/

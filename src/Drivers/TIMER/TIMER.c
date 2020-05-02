@@ -12,10 +12,17 @@
 /*************************************************************************************************
  *	Includes
  *************************************************************************************************/
-#include "stm32l4xx.h"
-#include "Types.h"
-#include "GPIO.h"
-#include "INTRPT.h"
+#include "Cmn_Types.h"
+#include "Project_Cfg.h"
+
+#if ( _TIMER_MODULE_ == ON )
+/*MCU Specific Header File*/
+#if (_MCU_STM32L476RG_ == ON)
+# include "stm32l4xx.h"
+#endif
+#if ( _INTRPT_MODULE_ == ON )
+# include "INTRPT.h"
+#endif
 
 /*************************************************************************************************
  *	MACRO
@@ -70,3 +77,4 @@ void TIMER_RLT_Init(void)
 	return;
 }
 
+#endif /*_TIMER_MODULE_*/

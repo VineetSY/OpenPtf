@@ -12,9 +12,16 @@
 /*************************************************************************************************
  *	Includes
  *************************************************************************************************/
-#include "stm32l4xx.h"
-#include "Types.h"
-#include "GPIO.h"
+#include "Cmn_Types.h"
+#include "Project_Cfg.h"
+#if ( _INTRPT_MODULE_ == ON )
+/*MCU Specific Header File*/
+#if (_MCU_STM32L476RG_ == ON)
+# include "stm32l4xx.h"
+#endif
+#if ( _GPIO_MODULE_ == ON )
+# include "GPIO.h"
+#endif
 #include "BLINKY.h"
 
 /*************************************************************************************************
@@ -46,9 +53,9 @@
  *
  *  @summary - SysTick timer default interrupt handler
  *
- *  @param - in: IRQn  Interrupt Number Definition
+ *  @param [in] - IRQn	Interrupt Number Definition
  *
- *  @param - in: priority  rogrammable priority level of 0-15 for each interrupt
+ *  @param [in]- priority	programmable priority level of 0-15 for each interrupt
  *
  *  @retval - NA
  *************************************************************************************************/
@@ -92,4 +99,4 @@ void TIM2_IRQHandler(void)
 	return;
 }
 
-
+#endif /*_INTRPT_MODULE_*/

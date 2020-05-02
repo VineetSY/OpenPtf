@@ -8,12 +8,18 @@
  * Author: Vineet
  *************************************************************************************************/
 
-
 /*************************************************************************************************
  *	Includes
  *************************************************************************************************/
-#include "stm32l4xx.h"
-#include "Types.h"
+#include "Cmn_Types.h"
+#include "Project_Cfg.h"
+#if ( _GPIO_MODULE_ == ON )
+/*MCU Specific Header File*/
+#if (_MCU_STM32L476RG_ == ON)
+# include "stm32l4xx.h"
+#endif
+
+
 #include "GPIO.h"
 
 /*************************************************************************************************
@@ -81,7 +87,7 @@ void GPIO_Init(void)
  *
  *  @summary - GPIO pin configuration update
  *
- *  @param in - Pin: GPIO pin number to configure
+ *  @param [in] - Pin: GPIO pin number to configure
  *
  *  @retval- NA
  **************************************************************************************************/
@@ -112,11 +118,11 @@ void GPIO_Pin_Config(GPIO_PinType_e Pin)
  *
  *  @summary - GPIO pin digital output mode update
  *
- *  @param in - Pin: GPIO pin number to select
+ *  @param [in] - Pin: GPIO pin number to select
  *  				@arg @ref GPIO_PA5  GPIO port a pin 5
  *  				@arg @ref GPIO_PA6  GPIO port a pin 5
  *
- *  @param in - Mode: output mode for the selected pin
+ *  @param [in] - Mode: output mode for the selected pin
  *  				@arg @ref MODE_LOW  GPIO pin digital output low mode
  *  				@arg @ref MODE_HIGH  GPIO pin digital output high mode
  *
@@ -141,3 +147,4 @@ void GPIO_PinMode_Update(uint8 Pin, uint8 Mode)
 	return;
 }
 
+#endif /*_GPIO_MODULE_*/
