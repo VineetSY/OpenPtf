@@ -52,6 +52,7 @@ void GPIO_Init(void);
 void GPIO_PinMode_Update(uint8 Pin, uint8 Mode);
 void GPIO_UsrBtnB1_Update(void);
 GPIO_BtnState_e GPIO_BtnB1State_Get(void);
+void GPIO_Pwm_Config(uint32 val);
 /*************************************************************************************************
  *	Function Definitions
  *************************************************************************************************/

@@ -1,5 +1,5 @@
 /*************************************************************************************************
- * Module name: BLINKY.c
+ * Module name: LEDApp.h
  *
  * Purpose:
  *
@@ -8,15 +8,14 @@
  * Author: Vineet
  *************************************************************************************************/
 
+#ifndef APPL_LEDApp_LEDApp_H_
+#define APPL_LEDApp_LEDApp_H_
+
 
 /*************************************************************************************************
  *	Includes
  *************************************************************************************************/
-#include "Cmn_Types.h"
-#include "Project_Cfg.h"
-#if ( _GPIO_MODULE_ == ON )
-# include "GPIO.h"
-#endif
+
 /*************************************************************************************************
  *	MACRO
  *************************************************************************************************/
@@ -25,12 +24,12 @@
 /*************************************************************************************************
  *	Private variables
  *************************************************************************************************/
-uint8 mode = 0;
-GPIO_BtnState_e btnState = BtnNotPressed;
+
 
 /*************************************************************************************************
  *	Global variables
  *************************************************************************************************/
+
 
 /*************************************************************************************************
  *	Private function prototypes
@@ -41,9 +40,8 @@ GPIO_BtnState_e btnState = BtnNotPressed;
  *	Function Definitions
  *************************************************************************************************/
 
-
 /*************************************************************************************************
- *  @name - BLINKY_LED_Update
+ *  @name - LEDApp_LED_Update
  *
  *  @summary - On_board and external LED toggle
  *
@@ -51,55 +49,7 @@ GPIO_BtnState_e btnState = BtnNotPressed;
  *
  *  @retval- NA
  *************************************************************************************************/
-void BLINKY_LED_Update(void)
-{
-	static uint32 i;
+void LEDApp_LED_Update(void);
+void LEDApp_BreatheLED_Update(void);
 
-
-	i++;
-	btnState = GPIO_BtnB1State_Get();
-
-	if(btnState == BtnPressed)
-	{
-		mode = 1;
-	}
-	//Turn OFF the LED at port PA5
-	if(mode == 0)
-	{
-		if(i > 1000)
-		{
-			i = 0;
-			GPIO_PinMode_Update((uint8)GPIO_PA5, (uint8)MODE_LOW);
-			GPIO_PinMode_Update((uint8)GPIO_PA6, (uint8)MODE_HIGH);
-		}
-		else if (i == 500)
-		{
-			GPIO_PinMode_Update((uint8)GPIO_PA5, (uint8)MODE_HIGH);
-			GPIO_PinMode_Update((uint8)GPIO_PA6, (uint8)MODE_LOW);
-		}
-		else
-		{
-			//Do nothing
-		}
-	}
-	else
-	{
-		if(i > 1000)
-		{
-			i = 0;
-			GPIO_PinMode_Update((uint8)GPIO_PA5, (uint8)MODE_HIGH);
-			GPIO_PinMode_Update((uint8)GPIO_PA6, (uint8)MODE_HIGH);
-		}
-		else if (i == 500)
-		{
-			GPIO_PinMode_Update((uint8)GPIO_PA5, (uint8)MODE_LOW);
-			GPIO_PinMode_Update((uint8)GPIO_PA6, (uint8)MODE_LOW);
-		}
-		else
-		{
-			//Do nothing
-		}
-	}
-
-	return;
-}
+#endif /* APPL_LEDApp_LEDApp_H_ */

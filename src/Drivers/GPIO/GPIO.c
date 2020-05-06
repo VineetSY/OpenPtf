@@ -138,6 +138,38 @@ void GPIO_Init(void)
 	GPIO_Pin_Config(GPIO_PA6);
 	GPIO_BtnB1_Config();
 
+	RCC->AHB2ENR |= RCC_AHB2ENR_GPIOBEN;
+	RCC->APB1ENR1 |= RCC_APB1ENR1_TIM4EN;
+	GPIOB->AFR[0] |= GPIO_AFRL_AFSEL6_1;
+	GPIOB->MODER &= ~(GPIO_MODER_MODE6);
+	GPIOB->MODER |= (GPIO_MODER_MODE6_1);
+
+	TIM4->CR1 |= TIM_CR1_CEN;	/*Counter enable*/
+	TIM4->ARR = (uint16)999u;	/*ARR sets PWM frequency, Period = (ARR+1)*Fclk*/
+	TIM4->PSC = 0;			/*Input clock division*/
+	TIM4->EGR |= TIM_EGR_UG;	/*Event Generation - update generation*/
+	TIM4->CCER |= TIM_CCER_CC1E;/*Capture compare output enable*/
+	TIM4->CCMR1 |= TIM_CCMR1_OC1M_1 | TIM_CCMR1_OC1M_2 | TIM_CCMR1_OC1PE;
+	TIM4->CCMR1 &= ~TIM_CCMR1_OC1FE;
+	TIM4->CCR1 = (uint16)499u;
+	TIM4->BDTR |= TIM_BDTR_MOE;
+
+	// RCC->AHB2ENR |= RCC_AHB2ENR_GPIOAEN;
+	// RCC->APB1ENR1 |= RCC_APB1ENR1_TIM2EN;
+	// GPIOB->AFR[0] |= GPIO_AFRL_AFSEL5_0;
+	// GPIOB->MODER &= ~(GPIO_MODER_MODE5);
+	// GPIOB->MODER |= (GPIO_MODER_MODE5_1);
+
+	// TIM2->CR1 |= TIM_CR1_CEN;	/*Counter enable*/
+	// TIM2->ARR = (uint16)999u;	/*ARR sets PWM frequency, Period = (ARR+1)*Fclk*/
+	// TIM2->PSC = 0;			/*Input clock division*/
+	// TIM2->EGR |= TIM_EGR_UG;	/*Event Generation - update generation*/
+	// TIM2->CCER |= TIM_CCER_CC1E;/*Capture compare output enable*/
+	// TIM2->CCMR1 |= TIM_CCMR1_OC1M_1 | TIM_CCMR1_OC1M_2 | TIM_CCMR1_OC1PE;
+	// TIM2->CCMR1 &= ~TIM_CCMR1_OC1FE;
+	// TIM2->CCR1 = (uint16)499u;
+	// TIM2->BDTR |= TIM_BDTR_MOE;
+
 	return;
 }
 
@@ -169,6 +201,14 @@ void GPIO_Pin_Config(GPIO_PinType_e Pin)
 
 	/*Bit set reset register*/
 	GPIOA ->BRR |= (IOPinCfg[Pin].BRR);
+
+	return;
+}
+
+void GPIO_Pwm_Config(uint32 val)
+{
+	TIM4->CCR1 = val;
+	TIM2->CCR1 = val;
 
 	return;
 }

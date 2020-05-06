@@ -22,7 +22,7 @@
 #if ( _GPIO_MODULE_ == ON )
 # include "GPIO.h"
 #endif
-#include "BLINKY.h"
+#include "LEDApp.h"
 
 /*************************************************************************************************
  *	MACRO
@@ -78,8 +78,8 @@ void INTRPT_Config(uint32 IRQn, uint32 priority)
  *************************************************************************************************/
 void SysTick_Handler(void)
 {
-	BLINKY_LED_Update();
-
+//	LEDApp_LED_Update();
+	LEDApp_BreatheLED_Update();
 	return;
 }
 
