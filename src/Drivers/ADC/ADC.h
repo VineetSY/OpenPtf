@@ -1,32 +1,20 @@
 /*************************************************************************************************
- * Module name: INTRPT.c
+ * Module name: ADC.h
  *
- * Purpose: HW/SW interrupt Implementation Module
+ * Purpose: Analog to Digital converter peripheral device driver.
  *
- * Created on: 18-Apr-2020
+ * Created on: 28-Jun-2020
  *
  * Author: Vineet
  *************************************************************************************************/
+
+#ifndef ADC_ADC_H_
+#define ADC_ADC_H_
 
 
 /*************************************************************************************************
  *	Includes
  *************************************************************************************************/
-#include "Cmn_Types.h"
-#include "Project_Cfg.h"
-#if ( _INTRPT_MODULE_ == ON )
-/*MCU Specific Header File*/
-#if (_MCU_STM32L476RG_ == ON)
-# include "stm32l4xx.h"
-#endif
-#if ( _GPIO_MODULE_ == ON )
-# include "GPIO.h"
-#endif
-#if ( _ADC_MODULE_ == ON )
-# include "ADC.h"
-#endif
-#include "LEDApp.h"
-#include "PRINT.h"
 
 /*************************************************************************************************
  *	MACRO
@@ -42,10 +30,56 @@
  *	Global variables
  *************************************************************************************************/
 
+
 /*************************************************************************************************
- *	Private function prototypes
+ *	Function prototypes
  *************************************************************************************************/
 
+/*************************************************************************************************
+ *  @name - ADC_Init
+ *
+ *  @summary - ADC initialization function. this function will also call the ADC start to start
+ *  			the peripheral
+ *
+ *  @param - NA
+ *
+ *  @retval- NA
+ *************************************************************************************************/
+void ADC_Init(void);
+
+/*************************************************************************************************
+ *  @name - ADC_Start
+ *
+ *  @summary -  This function will clear ADC flag and start ADC conversion operation
+ *
+ *  @param - NA
+ *
+ *  @retval- NA
+ *************************************************************************************************/
+void ADC_Start(void);
+
+/*************************************************************************************************
+ *  @name - ADC_GetValue
+ *
+ *  @summary - ADC initialization function. this function will also call the ADC start to start
+ *  			the peripheral
+ *
+ *  @param - [in] - *buffer: pointer to buffer to store ADC conversion result from Data register
+ *
+ *  @retval- NA
+ *************************************************************************************************/
+void ADC_GetValue(uint16 *buffer);
+
+/*************************************************************************************************
+ *  @name - ADC_Stop
+ *
+ *  @summary -  This function will Stop ADc operation
+ *
+ *  @param - NA
+ *
+ *  @retval- NA
+ *************************************************************************************************/
+void ADC_Stop(void);
 
 /*************************************************************************************************
  *	Function Definitions
@@ -53,76 +87,13 @@
 
 
 /*************************************************************************************************
- *  @name - SysTick_Handler
+ *  @name - 
  *
- *  @summary - SysTick timer default interrupt handler
+ *  @summary - 
  *
- *  @param [in] - IRQn	Interrupt Number Definition
+ *  @param - 
  *
- *  @param [in]- priority	programmable priority level of 0-15 for each interrupt
- *
- *  @retval - NA
+ *  @retval- 
  *************************************************************************************************/
-void INTRPT_Config(uint32 IRQn, uint32 priority)
-{
-	NVIC_EnableIRQ(IRQn);
-	NVIC_SetPriority(IRQn, priority);
 
-	return;
-}
-
-/*************************************************************************************************
- *  @name - SysTick_Handler
- *
- *  @summary - SysTick timer default interrupt handler
- *
- *  @param - NA
- *
- *  @retval - NA
- *************************************************************************************************/
-void SysTick_Handler(void)
-{
-//	LEDApp_LED_Update();
-	LEDApp_BreatheLED_Update();
-	return;
-}
-
-
-/*************************************************************************************************
- *  @name - TIM2_IRQHandler
- *
- *  @summary - TIM2 timer interrupt handler
- *
- *  @param - NA
- *
- *  @retval - NA
- *************************************************************************************************/
-void TIM2_IRQHandler(void)
-{
-
-	return;
-}
-
-/*************************************************************************************************
- *  @name - ADC1_2_IRQHandler
- *
- *  @summary - ADC1 interrupt handler
- *
- *  @param - NA
- *
- *  @retval - NA
- *************************************************************************************************/
-void ADC1_2_IRQHandler(void)
-{
-	uint16 adc_value = 0;
-
-	ADC_GetValue(&adc_value);
-	PRINT_String("ADC data ", NO_NEWLINE);
-	PRINT_Number(adc_value, ADD_NEWLINE);
-	(void)ADC_Start();
-
-	return ;
-}
-
-
-#endif /*_INTRPT_MODULE_*/
+#endif /* ADC_ADC_H_ */

@@ -35,7 +35,9 @@
 #if ( _PRINT_MODULE_ == ON )
 # include "PRINT.h"
 #endif
-
+#if ( _PRINT_MODULE_ == ON )
+# include "ADC.h"
+#endif
 
 /*************************************************************************************************
  *	MACRO & Types
@@ -45,7 +47,6 @@
 /*************************************************************************************************
  *	Private variables
  *************************************************************************************************/
-
 
 /*************************************************************************************************
  *	Global variables
@@ -88,6 +89,7 @@ int main(void)
 	/* System Initialization */
 	CLOCK_Init();
 	GPIO_Init();
+	ADC_Init();
 
 #if (_MCU_STM32L476RG_ == ON)
 	SystemCoreClockUpdate();
@@ -100,7 +102,7 @@ int main(void)
 		{
 			counter++;
 			GPIO_UsrBtnB1_Update();
-			PRINT_String("Print Count number ", counter);
+
 			delay = 0;
 			__WFI();
 		}
@@ -114,3 +116,5 @@ int main(void)
 	/*main function should never be returned/exited, if this is reached it is most likely an error*/
 	return ERR;
 }
+
+

@@ -19,6 +19,9 @@
 #if (_MCU_STM32L476RG_ == ON)
 # include "stm32l4xx.h"
 #endif
+
+#include "PRINT.h"
+
 /*************************************************************************************************
  *	MACRO & Types
  *************************************************************************************************/
@@ -41,8 +44,8 @@
 /*************************************************************************************************
  *	Private function prototypes
  *************************************************************************************************/
-char* Local_itoa(uint32 num, char* str, uint32 base);
-void reverse(char str[], uint32 length);
+static char* Local_itoa(uint32 num, char* str, uint32 base);
+static void reverse(char str[], uint32 length);
 
 
 /*************************************************************************************************
@@ -57,16 +60,16 @@ void reverse(char str[], uint32 length);
  *  			etc) and adds a new line character at the end of the string.
  *
  *  @param [in] - str: Character string to be printed
- *  @param [in] - num: numerical value to be printed, treated as a base 10 for converting to string
- *  					before printing.
+ *  @param [in] - InsertNewline: This parameter specified whether a Newline should 0be inserted,
+ *  								following values are possible.
+ *						@arg - NO_NEWLINE when specified the function will not add newline.
+ *						@arg - ADD_NEWLINE when specified the function will add newline at the end.
  *
  *  @retval- StrLen: Returns length of Output string, new line character is not counted
  *************************************************************************************************/
-uint8 PRINT_String(char *str, uint32 num)
+uint8 PRINT_String(char *str, boolean InsertNewline)
 {
 	uint8 StrLen = 0; /*String length*/
-	uint32 index = 0;
-	char tempstr[16] = {0};
 
 	while(*str != (uint32)NULL)
 	{
@@ -74,22 +77,54 @@ uint8 PRINT_String(char *str, uint32 num)
 		++StrLen;
 	}
 
-	(void)Local_itoa(num, tempstr, 10);
-
-	while(tempstr[index] != (uint32)NULL)
+	if(InsertNewline == ADD_NEWLINE)
 	{
-		(void)SEND_CHAR_TO_DEVICE(tempstr[index++]);
-		++StrLen;
+		(void)SEND_CHAR_TO_DEVICE('\n');
 	}
-
-	(void)SEND_CHAR_TO_DEVICE('\n');
 
 	return StrLen;
 }
 
 
+/*************************************************************************************************
+ *  @name - PRINT_Number
+ *
+ *  @summary - Converts the given number to a string then prints character strings to configured
+ *  			output display method(serial wire out, LCD,	etc) and adds a new line character at
+ *  			the end of the string.
+ *
+ *  @param [in] - num: numerical value to be printed, treated as a base 10 for converting to string
+ *  					before printing.
+ *  @param [in] - InsertNewline: This parameter specified whether a Newline should 0be inserted,
+ *  								following values are possible.
+ *						@arg - NO_NEWLINE when specified the function will not add newline.
+ *						@arg - ADD_NEWLINE when specified the function will add newline at the end.
+ *
+ *  @retval- StrLen: Returns length of Output string, new line character is not counted
+ *************************************************************************************************/
+void PRINT_Number(uint32 num, boolean InsertNewline)
+{
+	uint32 index = 0;
+	char tempstr[16] = {0};
+
+	(void)Local_itoa(num, tempstr, 10);
+
+	while(tempstr[index] != (uint32)NULL)
+	{
+		(void)SEND_CHAR_TO_DEVICE(tempstr[index++]);
+	}
+
+	if(InsertNewline == ADD_NEWLINE)
+	{
+		(void)SEND_CHAR_TO_DEVICE('\n');
+	}
+
+	return ;
+}
+
+
 /* A utility function to reverse a string  */
-void reverse(char str[], uint32 length)
+static void reverse(char str[], uint32 length)
 {
     uint32 start = 0;
     uint32 end = length -1;
@@ -99,13 +134,12 @@ void reverse(char str[], uint32 length)
     	temp = *(str+start);
     	*(str+start) = *(str+end);
     	*(str+end) = temp;
-//        swap(*(str+start), *(str+end));
         start++;
         end--;
     }
 }
 
-char* Local_itoa(uint32 num, char* str, uint32 base)
+static char* Local_itoa(uint32 num, char* str, uint32 base)
 {
 	uint32 i = 0;
     _Bool isNegative = FALSE;

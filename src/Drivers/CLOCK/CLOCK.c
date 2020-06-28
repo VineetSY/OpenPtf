@@ -71,6 +71,10 @@ void CLOCK_Init(void)
 	/*Timer TIM2 clock enable*/
 	RCC->APB1ENR1 |= RCC_APB1ENR1_TIM2EN;
 
+	/*ADC clock enable*/
+	RCC->AHB2ENR |= RCC_AHB2ENR_ADCEN;
+	RCC->CCIPR |= RCC_CCIPR_ADCSEL;	/*ADCs clock source selection - System clock selected as ADCs clock*/
+
 	/*SysTick timer configuration for 80MHz clock source to generate 1ms SysTick*/
 	SysTick_Config((uint32)RELOAD_VAL_80MHZ_CLK);
 
