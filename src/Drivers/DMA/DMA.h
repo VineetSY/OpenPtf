@@ -1,32 +1,20 @@
 /*************************************************************************************************
- * Module name: INTRPT.c
+ * Module name: DMA.h
  *
- * Purpose: HW/SW interrupt Implementation Module
+ * Purpose: Direct Memory Access Peripheral Device Driver
  *
- * Created on: 18-Apr-2020
+ * Created on: Aug 24, 2020
  *
  * Author: Vineet
  *************************************************************************************************/
+
+#ifndef DMA_DMA_H_
+#define DMA_DMA_H_
 
 
 /*************************************************************************************************
  *	Includes
  *************************************************************************************************/
-#include "Cmn_Types.h"
-#include "Project_Cfg.h"
-#if ( _INTRPT_MODULE_ == ON )
-/*MCU Specific Header File*/
-#if (_MCU_STM32L476RG_ == ON)
-# include "stm32l4xx.h"
-#endif
-#if ( _GPIO_MODULE_ == ON )
-# include "GPIO.h"
-#endif
-#if ( _ADC_MODULE_ == ON )
-# include "ADC.h"
-#endif
-#include "LEDApp.h"
-#include "PRINT.h"
 
 /*************************************************************************************************
  *	MACRO
@@ -42,8 +30,9 @@
  *	Global variables
  *************************************************************************************************/
 
+
 /*************************************************************************************************
- *	Private function prototypes
+ *	Function prototypes
  *************************************************************************************************/
 
 
@@ -53,96 +42,47 @@
 
 
 /*************************************************************************************************
- *  @name - SysTick_Handler
+ *  @name - DMA_Init
  *
- *  @summary - SysTick timer default interrupt handler
- *
- *  @param [in] - IRQn	Interrupt Number Definition
- *
- *  @param [in]- priority	programmable priority level of 0-15 for each interrupt
- *
- *  @retval - NA
- *************************************************************************************************/
-void INTRPT_Config(uint32 IRQn, uint32 priority)
-{
-	NVIC_EnableIRQ(IRQn);
-	NVIC_SetPriority(IRQn, priority);
-
-	return;
-}
-
-/*************************************************************************************************
- *  @name - SysTick_Handler
- *
- *  @summary - SysTick timer default interrupt handler
+ *  @summary - Initialise and configure the DMA to read ADC1 data
  *
  *  @param - NA
  *
- *  @retval - NA
+ *  @retval- NA
  *************************************************************************************************/
-void SysTick_Handler(void)
-{
-//	LEDApp_LED_Update();
-	LEDApp_BreatheLED_Update();
-	return;
-}
-
+void DMA_Init(void);
 
 /*************************************************************************************************
- *  @name - TIM2_IRQHandler
+ *  @name - DMA_Start
  *
- *  @summary - TIM2 timer interrupt handler
+ *  @summary - Start DMA operation
  *
  *  @param - NA
  *
- *  @retval - NA
+ *  @retval- NA
  *************************************************************************************************/
-void TIM2_IRQHandler(void)
-{
-
-	return;
-}
+void DMA_Start(void);
 
 /*************************************************************************************************
- *  @name - ADC1_2_IRQHandler
+ *  @name - DMA_Stop
  *
- *  @summary - ADC1 interrupt handler
+ *  @summary - Stop DMA operation
  *
  *  @param - NA
  *
- *  @retval - NA
+ *  @retval- NA
  *************************************************************************************************/
-extern uint16 adc_in5_value;
-extern uint16 adc_in1_value;
-void ADC1_2_IRQHandler(void)
-{
-	static uint16 data1 = 0;
-	static uint16 data2 = 0;
-	static uint8 sequence = 0;
+void DMA_Stop(void);
 
-	if(ADC1->ISR & ADC_ISR_EOS)
-	{
-		adc_in1_value = data1;
-		adc_in5_value = data2;
-	}
-	else
-	{
-		if(sequence%2)
-		{
-			ADC_GetValue(&data2);
-			sequence = 0;
+/*************************************************************************************************
+ *  @name - DMA_Shutdown
+ *
+ *  @summary - Shutdown DMA peripheral completely
+ *
+ *  @param - NA
+ *
+ *  @retval- NA
+ *************************************************************************************************/
+void DMA_Shutdown(void);
 
-		}
-		else
-		{
-			ADC_GetValue(&data1);
-			sequence++;
-		}
-	}
-	(void)ADC_Start();
-
-	return ;
-}
-
-
-#endif /*_INTRPT_MODULE_*/
+#endif /* DMA_DMA_H_ */

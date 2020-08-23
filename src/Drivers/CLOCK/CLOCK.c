@@ -23,6 +23,7 @@
 /*************************************************************************************************
  *	MACRO & Types
  *************************************************************************************************/
+/* PLL_80MHZ is using PLLM as 6u and PLLN as 20u and PLLR is 2u, Src is MSI 48MHZ */
 #define PLL_80MHZ ( (RCC_PLLCFGR_PLLREN |RCC_PLLCFGR_PLLM_2 | RCC_PLLCFGR_PLLM_0 | RCC_PLLCFGR_PLLN_4 | RCC_PLLCFGR_PLLN_2 | RCC_PLLCFGR_PLLSRC_MSI) )
 
 #define CLOCK_HSI		0x01u
@@ -68,8 +69,17 @@ void CLOCK_Init(void)
 	/*Enabling GPIO Port A Clock*/
 	RCC->AHB2ENR |= RCC_AHB2ENR_GPIOAEN;
 
+	/*Enabling GPIO Port B Clock*/
+	RCC->AHB2ENR |= RCC_AHB2ENR_GPIOBEN;
+
+	/*Enabling GPIO Port C Clock*/
+	RCC->AHB2ENR |= RCC_AHB2ENR_GPIOCEN;
+
+	/*Timer TIM4 clock enable*/
+	RCC->APB1ENR1 |= RCC_APB1ENR1_TIM4EN;
+
 	/*Timer TIM2 clock enable*/
-	RCC->APB1ENR1 |= RCC_APB1ENR1_TIM2EN;
+//	RCC->APB1ENR1 |= RCC_APB1ENR1_TIM2EN;
 
 	/*ADC clock enable*/
 	RCC->AHB2ENR |= RCC_AHB2ENR_ADCEN;

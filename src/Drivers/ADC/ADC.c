@@ -53,6 +53,9 @@
  *
  *  @summary - ADC initialization function. this function will also call the ADC start to start
  *  			the peripheral
+ *  			Currently configured for:
+ *  			ADC1_IN5 on PA0
+ *  			ADC1_IN1 on PC0
  *
  *  @param - NA
  *
@@ -76,6 +79,7 @@ void ADC_Init(void)
 	/*Channels can be configured to be either single-ended input or differential input by writing
 	into bits DIFSEL[15:1] in the ADCx_DIFSEL*/
 	ADC1->DIFSEL &= ~ADC_DIFSEL_DIFSEL_5;
+	ADC1->DIFSEL &= ~ADC_DIFSEL_DIFSEL_1;
 
 	/*Write ADCALDIF=0 before launching a calibration which will be applied for single-
 	ended input conversions*/
@@ -102,18 +106,21 @@ void ADC_Init(void)
 	configure the corresponding GPIOx_ASCR register in the GPIO, in addition to the I/O
 	configuration in analog mode*/
 	GPIOA->ASCR |= GPIO_ASCR_ASC0;
+	GPIOC->ASCR |= GPIO_ASCR_ASC0;
 
 	/*Select highest sampling time for channel 5.*/
 	ADC1->SMPR1 |= ADC_SMPR1_SMP5_1 | ADC_SMPR1_SMP5_0;
+	ADC1->SMPR1 |= ADC_SMPR1_SMP1_1 | ADC_SMPR1_SMP1_0;
 	ADC123_COMMON->CCR |= ADC_CCR_VREFEN;
 
 	/*ADC sequence register set as value 5 for conversion from ADC1 in channel5 as the first conversion channel*/
-	ADC1->SQR1 |= ADC_SQR1_SQ1_2 | ADC_SQR1_SQ1_0;
+	ADC1->SQR1 |= ADC_SQR1_L_0; /*Sequence length 2*/
+	ADC1->SQR1 |= ADC_SQR1_SQ1_2 | ADC_SQR1_SQ1_0 | ADC_SQR1_SQ2_0;
 
 	/*Configure ADC Interrupt with highest Priority*/
 	INTRPT_Config(ADC1_2_IRQn, 0x00);
 
-	/*Enable ADC interrupt*/
+	/*Enable ADC End of Conversion Interrupt*/
 	ADC1->IER |= ADC_IER_EOCIE;
 
 	(void)ADC_Start();
@@ -133,8 +140,10 @@ void ADC_Init(void)
 void ADC_Start(void)
 {
 
-	/*Enable ADC interrupt*/
-	ADC1->ISR |= ADC_ISR_EOC;
+	/* Clear ADC interrupt*/
+	ADC1->ISR |= (ADC_ISR_EOC | ADC_ISR_EOS);
+	/*ADC Continuous mode*/
+//	ADC1->CFGR |= ADC_CFGR_CONT;
 	/*Start conversion*/
 	ADC1->CR |= ADC_CR_ADSTART;
 
