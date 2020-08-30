@@ -82,7 +82,6 @@ void INTRPT_Config(uint32 IRQn, uint32 priority)
  *************************************************************************************************/
 void SysTick_Handler(void)
 {
-//	LEDApp_LED_Update();
 	LEDApp_BreatheLED_Update();
 	return;
 }
@@ -112,35 +111,8 @@ void TIM2_IRQHandler(void)
  *
  *  @retval - NA
  *************************************************************************************************/
-extern uint16 adc_in5_value;
-extern uint16 adc_in1_value;
 void ADC1_2_IRQHandler(void)
 {
-	static uint16 data1 = 0;
-	static uint16 data2 = 0;
-	static uint8 sequence = 0;
-
-//	if(ADC1->ISR & ADC_ISR_EOS)
-//	{
-//		adc_in1_value = data1;
-//		adc_in5_value = data2;
-//	}
-//	else
-//	{
-//		if(sequence%2)
-//		{
-//			ADC_GetValue(&data2);
-//			sequence = 0;
-//
-//		}
-//		else
-//		{
-//			ADC_GetValue(&data1);
-//			sequence++;
-//		}
-//	}
-//	(void)ADC_Start();
-
 	return ;
 }
 

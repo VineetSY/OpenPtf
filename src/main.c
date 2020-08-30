@@ -54,9 +54,9 @@
 /*************************************************************************************************
  *	Global variables
  *************************************************************************************************/
-uint16 adc_in5_value = 0;
-uint16 adc_in1_value = 0;
-uint16 ADC_DMA_Buffer[2] = {0};
+
+uint16 ADC1_Data_Buffer[2] = {0};
+
 /*************************************************************************************************
  *	Private function prototypes
  *************************************************************************************************/
@@ -125,8 +125,8 @@ int main(void)
 
 void DisplayADC(void)
 {
-	PRINT_String("ADC5 data ", NO_NEWLINE);
-	PRINT_Number(adc_in5_value, NO_NEWLINE);
-	PRINT_String("	ADC1 data ", NO_NEWLINE);
-	PRINT_Number(adc_in1_value, ADD_NEWLINE);
+	PRINT_String("ADC1_Data_Buffer[0] ", NO_NEWLINE);
+	PRINT_Number(ADC1_Data_Buffer[0], NO_NEWLINE);
+	PRINT_String("	ADC1_Data_Buffer[1] ", NO_NEWLINE);
+	PRINT_Number(ADC1_Data_Buffer[1], ADD_NEWLINE);
 }

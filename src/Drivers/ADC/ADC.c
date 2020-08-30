@@ -130,7 +130,9 @@ void ADC_Init(void)
 	/*INTRPT_Config(ADC1_2_IRQn, 0x00);*/
 
 	/*Enable ADC End of Conversion Interrupt*/
-	/*ADC1->IER |= ADC_IER_EOCIE;*/
+	/*ADC1->IER |= ADC_IER_EOCIE;*/ /*Disabled as ADC is configured for DMA + Continuous mode*/
+
+	/*Enable ADC Overrun interrupt enabled. An interrupt is generated when the OVR bit is set.*/
 	ADC1->IER |= ADC_IER_OVRIE;
 
 	(void)ADC_Start();
@@ -151,9 +153,8 @@ void ADC_Start(void)
 {
 
 	/* Clear ADC interrupt*/
-	//ADC1->ISR |= (ADC_ISR_EOC | ADC_ISR_EOS);
-	/*ADC Continuous mode*/
-//	ADC1->CFGR |= ADC_CFGR_CONT;
+	/*ADC1->ISR |= (ADC_ISR_EOC | ADC_ISR_EOS);*/ /*Disabled as ADC is configured for DMA + Continuous mode*/
+
 	/*Start conversion*/
 	ADC1->CR |= ADC_CR_ADSTART;
 

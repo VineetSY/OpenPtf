@@ -38,7 +38,7 @@
 /*************************************************************************************************
  *	Global variables
  *************************************************************************************************/
-extern uint16 ADC_DMA_Buffer[2];
+extern uint16 ADC1_Data_Buffer[2];
 /*************************************************************************************************
  *	Private function prototypes
  *************************************************************************************************/
@@ -63,7 +63,7 @@ void DMA_Init(void)
 	DMA1_Channel1->CPAR |= (uint32)(&(ADC1->DR));
 
 	/*DMA channel 1 memory address register configured to write data to ADC_DMA_Buffer*/
-	DMA1_Channel1->CMAR |= (uint32)(&ADC_DMA_Buffer);
+	DMA1_Channel1->CMAR |= (uint32)(&ADC1_Data_Buffer);
 
 	/*DMA channel 1 number of data register configured to 2 */
 	DMA1_Channel1->CNDTR |= 0x00000002;
@@ -81,6 +81,7 @@ void DMA_Init(void)
 	DMA1_Channel1->CCR |= DMA_CCR_MSIZE_0;
 
 	DMA_Start();
+
 	return ;
 }
 
@@ -96,7 +97,8 @@ void DMA_Init(void)
 void DMA_Start(void)
 {
 	/*DMA channel 1 configuration register Channel enabled*/
-	DMA1_Channel1->CCR |= DMA_CCR_EN;
+	SET_BIT(DMA1_Channel1->CCR, DMA_CCR_EN);
+
 	return ;
 }
 
@@ -111,6 +113,8 @@ void DMA_Start(void)
  *************************************************************************************************/
 void DMA_Stop(void)
 {
+	/*DMA1 channel configuration register Channel disabled*/
+	CLEAR_BIT(DMA1_Channel1->CCR, DMA_CCR_EN);
 
 	return ;
 }
