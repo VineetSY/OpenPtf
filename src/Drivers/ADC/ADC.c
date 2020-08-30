@@ -113,15 +113,25 @@ void ADC_Init(void)
 	ADC1->SMPR1 |= ADC_SMPR1_SMP1_1 | ADC_SMPR1_SMP1_0;
 	ADC123_COMMON->CCR |= ADC_CCR_VREFEN;
 
-	/*ADC sequence register set as value 5 for conversion from ADC1 in channel5 as the first conversion channel*/
+	/*ADC sequence register set as value 5 and 1 for conversion from ADC1 in ch5 and ch1 as the first and second conversion channels*/
 	ADC1->SQR1 |= ADC_SQR1_L_0; /*Sequence length 2*/
 	ADC1->SQR1 |= ADC_SQR1_SQ1_2 | ADC_SQR1_SQ1_0 | ADC_SQR1_SQ2_0;
 
+	/*continuous conversion mode enable*/
+	ADC1->CFGR |= ADC_CFGR_CONT;
+
+	/*Direct memory access enable*/
+	ADC1->CFGR |= ADC_CFGR_DMAEN;
+
+	/*Direct memory access configuration  Circular Mode selected*/
+	ADC1->CFGR |= ADC_CFGR_DMACFG;
+
 	/*Configure ADC Interrupt with highest Priority*/
-	INTRPT_Config(ADC1_2_IRQn, 0x00);
+	/*INTRPT_Config(ADC1_2_IRQn, 0x00);*/
 
 	/*Enable ADC End of Conversion Interrupt*/
-	ADC1->IER |= ADC_IER_EOCIE;
+	/*ADC1->IER |= ADC_IER_EOCIE;*/
+	ADC1->IER |= ADC_IER_OVRIE;
 
 	(void)ADC_Start();
 
@@ -141,7 +151,7 @@ void ADC_Start(void)
 {
 
 	/* Clear ADC interrupt*/
-	ADC1->ISR |= (ADC_ISR_EOC | ADC_ISR_EOS);
+	//ADC1->ISR |= (ADC_ISR_EOC | ADC_ISR_EOS);
 	/*ADC Continuous mode*/
 //	ADC1->CFGR |= ADC_CFGR_CONT;
 	/*Start conversion*/

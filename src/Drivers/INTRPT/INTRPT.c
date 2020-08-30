@@ -120,26 +120,26 @@ void ADC1_2_IRQHandler(void)
 	static uint16 data2 = 0;
 	static uint8 sequence = 0;
 
-	if(ADC1->ISR & ADC_ISR_EOS)
-	{
-		adc_in1_value = data1;
-		adc_in5_value = data2;
-	}
-	else
-	{
-		if(sequence%2)
-		{
-			ADC_GetValue(&data2);
-			sequence = 0;
-
-		}
-		else
-		{
-			ADC_GetValue(&data1);
-			sequence++;
-		}
-	}
-	(void)ADC_Start();
+//	if(ADC1->ISR & ADC_ISR_EOS)
+//	{
+//		adc_in1_value = data1;
+//		adc_in5_value = data2;
+//	}
+//	else
+//	{
+//		if(sequence%2)
+//		{
+//			ADC_GetValue(&data2);
+//			sequence = 0;
+//
+//		}
+//		else
+//		{
+//			ADC_GetValue(&data1);
+//			sequence++;
+//		}
+//	}
+//	(void)ADC_Start();
 
 	return ;
 }
