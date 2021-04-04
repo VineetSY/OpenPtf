@@ -1,0 +1,700 @@
+\hypertarget{group___c_m_s_i_s___core___instruction_interface}{}\doxysection{C\+M\+S\+IS Core Instruction Interface}
+\label{group___c_m_s_i_s___core___instruction_interface}\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
+
+
+Access to dedicated instructions.  
+
+
+Collaboration diagram for C\+M\+S\+IS Core Instruction Interface\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group___c_m_s_i_s___core___instruction_interface}
+\end{center}
+\end{figure}
+\doxysubsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___c_m_s_i_s___s_i_m_d__intrinsics}{C\+M\+S\+I\+S S\+I\+M\+D Intrinsics}}
+\begin{DoxyCompactList}\small\item\em Access to dedicated S\+I\+MD instructions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gabd585ddc865fb9b7f2493af1eee1a572}{\+\_\+\+\_\+\+N\+OP}}~\+\_\+\+\_\+nop
+\begin{DoxyCompactList}\small\item\em No Operation. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gad23bf2b78a9a4524157c9de0d30b7448}{\+\_\+\+\_\+\+W\+FI}}~\+\_\+\+\_\+wfi
+\begin{DoxyCompactList}\small\item\em Wait For Interrupt. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gaac6cc7dd4325d9cb40d3290fa5244b3d}{\+\_\+\+\_\+\+W\+FE}}~\+\_\+\+\_\+wfe
+\begin{DoxyCompactList}\small\item\em Wait For Event. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gaab4f296d0022b4b10dc0976eb22052f9}{\+\_\+\+\_\+\+S\+EV}}~\+\_\+\+\_\+sev
+\begin{DoxyCompactList}\small\item\em Send Event. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gaad233022e850a009fc6f7602be1182f6}{\+\_\+\+\_\+\+I\+SB}}()
+\begin{DoxyCompactList}\small\item\em Instruction Synchronization Barrier. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_ga067d257a2b34565410acefb5afef2203}{\+\_\+\+\_\+\+D\+SB}}()
+\begin{DoxyCompactList}\small\item\em Data Synchronization Barrier. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_ga671101179b5943990785f36f8c1e2269}{\+\_\+\+\_\+\+D\+MB}}()
+\begin{DoxyCompactList}\small\item\em Data Memory Barrier. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_ga14f54807872c0f5e05604c4924abfdae}{\+\_\+\+\_\+\+R\+EV}}~\+\_\+\+\_\+rev
+\begin{DoxyCompactList}\small\item\em Reverse byte order (32 bit) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_ga95b9bd281ddeda378b85afdb8f2ced86}{\+\_\+\+\_\+\+R\+OR}}~\+\_\+\+\_\+ror
+\begin{DoxyCompactList}\small\item\em Rotate Right in unsigned value (32 bit) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_ga15ea6bd3c507d3e81c3b3a1258e46397}{\+\_\+\+\_\+\+B\+K\+PT}}(value)~\+\_\+\+\_\+breakpoint(value)
+\begin{DoxyCompactList}\small\item\em Breakpoint. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_ga5d5bb1527e042be4a9fa5a33f65cc248}{\+\_\+\+\_\+\+C\+LZ}}~\+\_\+\+\_\+clz
+\begin{DoxyCompactList}\small\item\em Count leading zeros. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gabc17e391c13c71702366c67cba39c276}{\+\_\+\+\_\+\+C\+M\+S\+I\+S\+\_\+\+G\+C\+C\+\_\+\+O\+U\+T\+\_\+\+R\+EG}}(r)~\char`\"{}=r\char`\"{} (r)
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_ga9d94dee7402367961d2cf0accc00fd97}{\+\_\+\+\_\+\+C\+M\+S\+I\+S\+\_\+\+G\+C\+C\+\_\+\+U\+S\+E\+\_\+\+R\+EG}}(r)~\char`\"{}r\char`\"{} (r)
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gabd585ddc865fb9b7f2493af1eee1a572}{\+\_\+\+\_\+\+N\+OP}}~\+\_\+\+\_\+builtin\+\_\+arm\+\_\+nop
+\begin{DoxyCompactList}\small\item\em No Operation. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gad23bf2b78a9a4524157c9de0d30b7448}{\+\_\+\+\_\+\+W\+FI}}~\+\_\+\+\_\+builtin\+\_\+arm\+\_\+wfi
+\begin{DoxyCompactList}\small\item\em Wait For Interrupt. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gaac6cc7dd4325d9cb40d3290fa5244b3d}{\+\_\+\+\_\+\+W\+FE}}~\+\_\+\+\_\+builtin\+\_\+arm\+\_\+wfe
+\begin{DoxyCompactList}\small\item\em Wait For Event. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gaab4f296d0022b4b10dc0976eb22052f9}{\+\_\+\+\_\+\+S\+EV}}~\+\_\+\+\_\+builtin\+\_\+arm\+\_\+sev
+\begin{DoxyCompactList}\small\item\em Send Event. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gaad233022e850a009fc6f7602be1182f6}{\+\_\+\+\_\+\+I\+SB}}()~\+\_\+\+\_\+builtin\+\_\+arm\+\_\+isb(0xF);
+\begin{DoxyCompactList}\small\item\em Instruction Synchronization Barrier. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_ga067d257a2b34565410acefb5afef2203}{\+\_\+\+\_\+\+D\+SB}}()~\+\_\+\+\_\+builtin\+\_\+arm\+\_\+dsb(0xF);
+\begin{DoxyCompactList}\small\item\em Data Synchronization Barrier. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_ga671101179b5943990785f36f8c1e2269}{\+\_\+\+\_\+\+D\+MB}}()~\+\_\+\+\_\+builtin\+\_\+arm\+\_\+dmb(0xF);
+\begin{DoxyCompactList}\small\item\em Data Memory Barrier. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_ga14f54807872c0f5e05604c4924abfdae}{\+\_\+\+\_\+\+R\+EV}}~\+\_\+\+\_\+builtin\+\_\+bswap32
+\begin{DoxyCompactList}\small\item\em Reverse byte order (32 bit) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_ga4e3acd41e7667cdf65ffcd8c76a8613f}{\+\_\+\+\_\+\+R\+E\+V16}}~\+\_\+\+\_\+builtin\+\_\+bswap16                           /$\ast$ To\+Do\+:  A\+R\+M\+C\+C\+\_\+\+V6\+: check if \+\_\+\+\_\+builtin\+\_\+bswap16 could be used $\ast$/
+\begin{DoxyCompactList}\small\item\em Reverse byte order (16 bit) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_ga15ea6bd3c507d3e81c3b3a1258e46397}{\+\_\+\+\_\+\+B\+K\+PT}}(value)~\+\_\+\+\_\+\+A\+SM volatile (\char`\"{}bkpt \char`\"{}\#value)
+\begin{DoxyCompactList}\small\item\em Breakpoint. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_ga5d5bb1527e042be4a9fa5a33f65cc248}{\+\_\+\+\_\+\+C\+LZ}}~\+\_\+\+\_\+builtin\+\_\+clz
+\begin{DoxyCompactList}\small\item\em Count leading zeros. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gabc17e391c13c71702366c67cba39c276}{\+\_\+\+\_\+\+C\+M\+S\+I\+S\+\_\+\+G\+C\+C\+\_\+\+O\+U\+T\+\_\+\+R\+EG}}(r)~\char`\"{}=r\char`\"{} (r)
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_ga9d94dee7402367961d2cf0accc00fd97}{\+\_\+\+\_\+\+C\+M\+S\+I\+S\+\_\+\+G\+C\+C\+\_\+\+U\+S\+E\+\_\+\+R\+EG}}(r)~\char`\"{}r\char`\"{} (r)
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_ga15ea6bd3c507d3e81c3b3a1258e46397}{\+\_\+\+\_\+\+B\+K\+PT}}(value)~\+\_\+\+\_\+\+A\+SM volatile (\char`\"{}bkpt \char`\"{}\#value)
+\begin{DoxyCompactList}\small\item\em Breakpoint. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_ga5d5bb1527e042be4a9fa5a33f65cc248}{\+\_\+\+\_\+\+C\+LZ}}~\+\_\+\+\_\+builtin\+\_\+clz
+\begin{DoxyCompactList}\small\item\em Count leading zeros. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gae84a2733711339c5eefeb0d899506b96}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}} ((section(\char`\"{}.rev16\+\_\+text\char`\"{}))) \+\_\+\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+I\+N\+L\+I\+NE \+\_\+\+\_\+\+A\+SM uint32\+\_\+t \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_ga4e3acd41e7667cdf65ffcd8c76a8613f}{\+\_\+\+\_\+\+R\+E\+V16}}(uint32\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Reverse byte order (16 bit) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_ga8e7a866927d3257a82b884ad14dbef4c}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}} ((section(\char`\"{}.revsh\+\_\+text\char`\"{}))) \+\_\+\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+I\+N\+L\+I\+NE \+\_\+\+\_\+\+A\+SM int32\+\_\+t \+\_\+\+\_\+\+R\+E\+V\+SH(int32\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Reverse byte order in signed short value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gab926fe7178a379c3a7c0410b06fcb661}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}} ((always\+\_\+inline)) \+\_\+\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+I\+N\+L\+I\+NE uint32\+\_\+t \+\_\+\+\_\+\+R\+B\+IT(uint32\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Reverse bit order of value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gadb2bb33809b6f35ba4d176cbec7c7b75}{op2}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gadb2bb33809b6f35ba4d176cbec7c7b75}{op2}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Access to dedicated instructions. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___c_m_s_i_s___core___instruction_interface_ga15ea6bd3c507d3e81c3b3a1258e46397}\label{group___c_m_s_i_s___core___instruction_interface_ga15ea6bd3c507d3e81c3b3a1258e46397}} 
+\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_BKPT@{\_\_BKPT}}
+\index{\_\_BKPT@{\_\_BKPT}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
+\doxysubsubsection{\texorpdfstring{\_\_BKPT}{\_\_BKPT}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+B\+K\+PT(\begin{DoxyParamCaption}\item[{}]{value }\end{DoxyParamCaption})~\+\_\+\+\_\+breakpoint(value)}
+
+
+
+Breakpoint. 
+
+Causes the processor to enter Debug state. Debug tools can use this to investigate system state when the instruction at a particular address is reached. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & is ignored by the processor. If required, a debugger can use it to store additional information about the breakpoint. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group___c_m_s_i_s___core___instruction_interface_ga15ea6bd3c507d3e81c3b3a1258e46397}\label{group___c_m_s_i_s___core___instruction_interface_ga15ea6bd3c507d3e81c3b3a1258e46397}} 
+\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_BKPT@{\_\_BKPT}}
+\index{\_\_BKPT@{\_\_BKPT}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
+\doxysubsubsection{\texorpdfstring{\_\_BKPT}{\_\_BKPT}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+B\+K\+PT(\begin{DoxyParamCaption}\item[{}]{value }\end{DoxyParamCaption})~\+\_\+\+\_\+\+A\+SM volatile (\char`\"{}bkpt \char`\"{}\#value)}
+
+
+
+Breakpoint. 
+
+Causes the processor to enter Debug state. Debug tools can use this to investigate system state when the instruction at a particular address is reached. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & is ignored by the processor. If required, a debugger can use it to store additional information about the breakpoint. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group___c_m_s_i_s___core___instruction_interface_ga15ea6bd3c507d3e81c3b3a1258e46397}\label{group___c_m_s_i_s___core___instruction_interface_ga15ea6bd3c507d3e81c3b3a1258e46397}} 
+\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_BKPT@{\_\_BKPT}}
+\index{\_\_BKPT@{\_\_BKPT}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
+\doxysubsubsection{\texorpdfstring{\_\_BKPT}{\_\_BKPT}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+B\+K\+PT(\begin{DoxyParamCaption}\item[{}]{value }\end{DoxyParamCaption})~\+\_\+\+\_\+\+A\+SM volatile (\char`\"{}bkpt \char`\"{}\#value)}
+
+
+
+Breakpoint. 
+
+Causes the processor to enter Debug state. Debug tools can use this to investigate system state when the instruction at a particular address is reached. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & is ignored by the processor. If required, a debugger can use it to store additional information about the breakpoint. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group___c_m_s_i_s___core___instruction_interface_ga5d5bb1527e042be4a9fa5a33f65cc248}\label{group___c_m_s_i_s___core___instruction_interface_ga5d5bb1527e042be4a9fa5a33f65cc248}} 
+\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_CLZ@{\_\_CLZ}}
+\index{\_\_CLZ@{\_\_CLZ}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
+\doxysubsubsection{\texorpdfstring{\_\_CLZ}{\_\_CLZ}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+C\+LZ~\+\_\+\+\_\+clz}
+
+
+
+Count leading zeros. 
+
+Counts the number of leading zeros of a data value. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & Value to count the leading zeros \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of leading zeros in value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___c_m_s_i_s___core___instruction_interface_ga5d5bb1527e042be4a9fa5a33f65cc248}\label{group___c_m_s_i_s___core___instruction_interface_ga5d5bb1527e042be4a9fa5a33f65cc248}} 
+\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_CLZ@{\_\_CLZ}}
+\index{\_\_CLZ@{\_\_CLZ}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
+\doxysubsubsection{\texorpdfstring{\_\_CLZ}{\_\_CLZ}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+C\+LZ~\+\_\+\+\_\+builtin\+\_\+clz}
+
+
+
+Count leading zeros. 
+
+Counts the number of leading zeros of a data value. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & Value to count the leading zeros \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of leading zeros in value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___c_m_s_i_s___core___instruction_interface_ga5d5bb1527e042be4a9fa5a33f65cc248}\label{group___c_m_s_i_s___core___instruction_interface_ga5d5bb1527e042be4a9fa5a33f65cc248}} 
+\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_CLZ@{\_\_CLZ}}
+\index{\_\_CLZ@{\_\_CLZ}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
+\doxysubsubsection{\texorpdfstring{\_\_CLZ}{\_\_CLZ}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+C\+LZ~\+\_\+\+\_\+builtin\+\_\+clz}
+
+
+
+Count leading zeros. 
+
+Counts the number of leading zeros of a data value. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & Value to count the leading zeros \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of leading zeros in value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___c_m_s_i_s___core___instruction_interface_gabc17e391c13c71702366c67cba39c276}\label{group___c_m_s_i_s___core___instruction_interface_gabc17e391c13c71702366c67cba39c276}} 
+\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_CMSIS\_GCC\_OUT\_REG@{\_\_CMSIS\_GCC\_OUT\_REG}}
+\index{\_\_CMSIS\_GCC\_OUT\_REG@{\_\_CMSIS\_GCC\_OUT\_REG}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
+\doxysubsubsection{\texorpdfstring{\_\_CMSIS\_GCC\_OUT\_REG}{\_\_CMSIS\_GCC\_OUT\_REG}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+C\+M\+S\+I\+S\+\_\+\+G\+C\+C\+\_\+\+O\+U\+T\+\_\+\+R\+EG(\begin{DoxyParamCaption}\item[{}]{r }\end{DoxyParamCaption})~\char`\"{}=r\char`\"{} (r)}
+
+\mbox{\Hypertarget{group___c_m_s_i_s___core___instruction_interface_gabc17e391c13c71702366c67cba39c276}\label{group___c_m_s_i_s___core___instruction_interface_gabc17e391c13c71702366c67cba39c276}} 
+\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_CMSIS\_GCC\_OUT\_REG@{\_\_CMSIS\_GCC\_OUT\_REG}}
+\index{\_\_CMSIS\_GCC\_OUT\_REG@{\_\_CMSIS\_GCC\_OUT\_REG}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
+\doxysubsubsection{\texorpdfstring{\_\_CMSIS\_GCC\_OUT\_REG}{\_\_CMSIS\_GCC\_OUT\_REG}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+C\+M\+S\+I\+S\+\_\+\+G\+C\+C\+\_\+\+O\+U\+T\+\_\+\+R\+EG(\begin{DoxyParamCaption}\item[{}]{r }\end{DoxyParamCaption})~\char`\"{}=r\char`\"{} (r)}
+
+\mbox{\Hypertarget{group___c_m_s_i_s___core___instruction_interface_ga9d94dee7402367961d2cf0accc00fd97}\label{group___c_m_s_i_s___core___instruction_interface_ga9d94dee7402367961d2cf0accc00fd97}} 
+\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_CMSIS\_GCC\_USE\_REG@{\_\_CMSIS\_GCC\_USE\_REG}}
+\index{\_\_CMSIS\_GCC\_USE\_REG@{\_\_CMSIS\_GCC\_USE\_REG}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
+\doxysubsubsection{\texorpdfstring{\_\_CMSIS\_GCC\_USE\_REG}{\_\_CMSIS\_GCC\_USE\_REG}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+C\+M\+S\+I\+S\+\_\+\+G\+C\+C\+\_\+\+U\+S\+E\+\_\+\+R\+EG(\begin{DoxyParamCaption}\item[{}]{r }\end{DoxyParamCaption})~\char`\"{}r\char`\"{} (r)}
+
+\mbox{\Hypertarget{group___c_m_s_i_s___core___instruction_interface_ga9d94dee7402367961d2cf0accc00fd97}\label{group___c_m_s_i_s___core___instruction_interface_ga9d94dee7402367961d2cf0accc00fd97}} 
+\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_CMSIS\_GCC\_USE\_REG@{\_\_CMSIS\_GCC\_USE\_REG}}
+\index{\_\_CMSIS\_GCC\_USE\_REG@{\_\_CMSIS\_GCC\_USE\_REG}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
+\doxysubsubsection{\texorpdfstring{\_\_CMSIS\_GCC\_USE\_REG}{\_\_CMSIS\_GCC\_USE\_REG}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+C\+M\+S\+I\+S\+\_\+\+G\+C\+C\+\_\+\+U\+S\+E\+\_\+\+R\+EG(\begin{DoxyParamCaption}\item[{}]{r }\end{DoxyParamCaption})~\char`\"{}r\char`\"{} (r)}
+
+\mbox{\Hypertarget{group___c_m_s_i_s___core___instruction_interface_ga671101179b5943990785f36f8c1e2269}\label{group___c_m_s_i_s___core___instruction_interface_ga671101179b5943990785f36f8c1e2269}} 
+\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_DMB@{\_\_DMB}}
+\index{\_\_DMB@{\_\_DMB}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
+\doxysubsubsection{\texorpdfstring{\_\_DMB}{\_\_DMB}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+D\+MB(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                   \textcolor{keywordflow}{do} \{\(\backslash\)}
+\DoxyCodeLine{                   \_\_schedule\_barrier();\(\backslash\)}
+\DoxyCodeLine{                   \_\_dmb(0xF);\(\backslash\)}
+\DoxyCodeLine{                   \_\_schedule\_barrier();\(\backslash\)}
+\DoxyCodeLine{                \} \textcolor{keywordflow}{while} (0U)}
+
+\end{DoxyCode}
+
+
+Data Memory Barrier. 
+
+Ensures the apparent order of the explicit memory operations before and after the instruction, without ensuring their completion. \mbox{\Hypertarget{group___c_m_s_i_s___core___instruction_interface_ga671101179b5943990785f36f8c1e2269}\label{group___c_m_s_i_s___core___instruction_interface_ga671101179b5943990785f36f8c1e2269}} 
+\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_DMB@{\_\_DMB}}
+\index{\_\_DMB@{\_\_DMB}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
+\doxysubsubsection{\texorpdfstring{\_\_DMB}{\_\_DMB}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+D\+MB(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\+\_\+\+\_\+builtin\+\_\+arm\+\_\+dmb(0xF);}
+
+
+
+Data Memory Barrier. 
+
+Ensures the apparent order of the explicit memory operations before and after the instruction, without ensuring their completion. \mbox{\Hypertarget{group___c_m_s_i_s___core___instruction_interface_ga067d257a2b34565410acefb5afef2203}\label{group___c_m_s_i_s___core___instruction_interface_ga067d257a2b34565410acefb5afef2203}} 
+\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_DSB@{\_\_DSB}}
+\index{\_\_DSB@{\_\_DSB}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
+\doxysubsubsection{\texorpdfstring{\_\_DSB}{\_\_DSB}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+D\+SB(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                   \textcolor{keywordflow}{do} \{\(\backslash\)}
+\DoxyCodeLine{                   \_\_schedule\_barrier();\(\backslash\)}
+\DoxyCodeLine{                   \_\_dsb(0xF);\(\backslash\)}
+\DoxyCodeLine{                   \_\_schedule\_barrier();\(\backslash\)}
+\DoxyCodeLine{                \} \textcolor{keywordflow}{while} (0U)}
+
+\end{DoxyCode}
+
+
+Data Synchronization Barrier. 
+
+Acts as a special kind of Data Memory Barrier. It completes when all explicit memory accesses before this instruction complete. \mbox{\Hypertarget{group___c_m_s_i_s___core___instruction_interface_ga067d257a2b34565410acefb5afef2203}\label{group___c_m_s_i_s___core___instruction_interface_ga067d257a2b34565410acefb5afef2203}} 
+\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_DSB@{\_\_DSB}}
+\index{\_\_DSB@{\_\_DSB}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
+\doxysubsubsection{\texorpdfstring{\_\_DSB}{\_\_DSB}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+D\+SB(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\+\_\+\+\_\+builtin\+\_\+arm\+\_\+dsb(0xF);}
+
+
+
+Data Synchronization Barrier. 
+
+Acts as a special kind of Data Memory Barrier. It completes when all explicit memory accesses before this instruction complete. \mbox{\Hypertarget{group___c_m_s_i_s___core___instruction_interface_gaad233022e850a009fc6f7602be1182f6}\label{group___c_m_s_i_s___core___instruction_interface_gaad233022e850a009fc6f7602be1182f6}} 
+\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_ISB@{\_\_ISB}}
+\index{\_\_ISB@{\_\_ISB}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
+\doxysubsubsection{\texorpdfstring{\_\_ISB}{\_\_ISB}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+I\+SB(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                   \textcolor{keywordflow}{do} \{\(\backslash\)}
+\DoxyCodeLine{                   \_\_schedule\_barrier();\(\backslash\)}
+\DoxyCodeLine{                   \_\_isb(0xF);\(\backslash\)}
+\DoxyCodeLine{                   \_\_schedule\_barrier();\(\backslash\)}
+\DoxyCodeLine{                \} \textcolor{keywordflow}{while} (0U)}
+
+\end{DoxyCode}
+
+
+Instruction Synchronization Barrier. 
+
+Instruction Synchronization Barrier flushes the pipeline in the processor, so that all instructions following the I\+SB are fetched from cache or memory, after the instruction has been completed. \mbox{\Hypertarget{group___c_m_s_i_s___core___instruction_interface_gaad233022e850a009fc6f7602be1182f6}\label{group___c_m_s_i_s___core___instruction_interface_gaad233022e850a009fc6f7602be1182f6}} 
+\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_ISB@{\_\_ISB}}
+\index{\_\_ISB@{\_\_ISB}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
+\doxysubsubsection{\texorpdfstring{\_\_ISB}{\_\_ISB}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+I\+SB(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\+\_\+\+\_\+builtin\+\_\+arm\+\_\+isb(0xF);}
+
+
+
+Instruction Synchronization Barrier. 
+
+Instruction Synchronization Barrier flushes the pipeline in the processor, so that all instructions following the I\+SB are fetched from cache or memory, after the instruction has been completed. \mbox{\Hypertarget{group___c_m_s_i_s___core___instruction_interface_gabd585ddc865fb9b7f2493af1eee1a572}\label{group___c_m_s_i_s___core___instruction_interface_gabd585ddc865fb9b7f2493af1eee1a572}} 
+\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_NOP@{\_\_NOP}}
+\index{\_\_NOP@{\_\_NOP}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
+\doxysubsubsection{\texorpdfstring{\_\_NOP}{\_\_NOP}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+N\+OP~\+\_\+\+\_\+nop}
+
+
+
+No Operation. 
+
+No Operation does nothing. This instruction can be used for code alignment purposes. \mbox{\Hypertarget{group___c_m_s_i_s___core___instruction_interface_gabd585ddc865fb9b7f2493af1eee1a572}\label{group___c_m_s_i_s___core___instruction_interface_gabd585ddc865fb9b7f2493af1eee1a572}} 
+\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_NOP@{\_\_NOP}}
+\index{\_\_NOP@{\_\_NOP}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
+\doxysubsubsection{\texorpdfstring{\_\_NOP}{\_\_NOP}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+N\+OP~\+\_\+\+\_\+builtin\+\_\+arm\+\_\+nop}
+
+
+
+No Operation. 
+
+No Operation does nothing. This instruction can be used for code alignment purposes. \mbox{\Hypertarget{group___c_m_s_i_s___core___instruction_interface_ga14f54807872c0f5e05604c4924abfdae}\label{group___c_m_s_i_s___core___instruction_interface_ga14f54807872c0f5e05604c4924abfdae}} 
+\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_REV@{\_\_REV}}
+\index{\_\_REV@{\_\_REV}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
+\doxysubsubsection{\texorpdfstring{\_\_REV}{\_\_REV}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+R\+EV~\+\_\+\+\_\+rev}
+
+
+
+Reverse byte order (32 bit) 
+
+Reverses the byte order in integer value. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & Value to reverse \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reversed value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___c_m_s_i_s___core___instruction_interface_ga14f54807872c0f5e05604c4924abfdae}\label{group___c_m_s_i_s___core___instruction_interface_ga14f54807872c0f5e05604c4924abfdae}} 
+\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_REV@{\_\_REV}}
+\index{\_\_REV@{\_\_REV}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
+\doxysubsubsection{\texorpdfstring{\_\_REV}{\_\_REV}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+R\+EV~\+\_\+\+\_\+builtin\+\_\+bswap32}
+
+
+
+Reverse byte order (32 bit) 
+
+Reverses the byte order in integer value. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & Value to reverse \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reversed value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___c_m_s_i_s___core___instruction_interface_ga4e3acd41e7667cdf65ffcd8c76a8613f}\label{group___c_m_s_i_s___core___instruction_interface_ga4e3acd41e7667cdf65ffcd8c76a8613f}} 
+\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_REV16@{\_\_REV16}}
+\index{\_\_REV16@{\_\_REV16}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
+\doxysubsubsection{\texorpdfstring{\_\_REV16}{\_\_REV16}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+R\+E\+V16~\+\_\+\+\_\+builtin\+\_\+bswap16                           /$\ast$ To\+Do\+:  A\+R\+M\+C\+C\+\_\+\+V6\+: check if \+\_\+\+\_\+builtin\+\_\+bswap16 could be used $\ast$/}
+
+
+
+Reverse byte order (16 bit) 
+
+Reverses the byte order in two unsigned short values. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & Value to reverse \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reversed value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___c_m_s_i_s___core___instruction_interface_ga95b9bd281ddeda378b85afdb8f2ced86}\label{group___c_m_s_i_s___core___instruction_interface_ga95b9bd281ddeda378b85afdb8f2ced86}} 
+\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_ROR@{\_\_ROR}}
+\index{\_\_ROR@{\_\_ROR}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
+\doxysubsubsection{\texorpdfstring{\_\_ROR}{\_\_ROR}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+R\+OR~\+\_\+\+\_\+ror}
+
+
+
+Rotate Right in unsigned value (32 bit) 
+
+Rotate Right (immediate) provides the value of the contents of a register rotated by a variable number of bits. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & Value to rotate \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & Number of Bits to rotate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Rotated value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___c_m_s_i_s___core___instruction_interface_gaab4f296d0022b4b10dc0976eb22052f9}\label{group___c_m_s_i_s___core___instruction_interface_gaab4f296d0022b4b10dc0976eb22052f9}} 
+\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_SEV@{\_\_SEV}}
+\index{\_\_SEV@{\_\_SEV}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
+\doxysubsubsection{\texorpdfstring{\_\_SEV}{\_\_SEV}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+S\+EV~\+\_\+\+\_\+sev}
+
+
+
+Send Event. 
+
+Send Event is a hint instruction. It causes an event to be signaled to the C\+PU. \mbox{\Hypertarget{group___c_m_s_i_s___core___instruction_interface_gaab4f296d0022b4b10dc0976eb22052f9}\label{group___c_m_s_i_s___core___instruction_interface_gaab4f296d0022b4b10dc0976eb22052f9}} 
+\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_SEV@{\_\_SEV}}
+\index{\_\_SEV@{\_\_SEV}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
+\doxysubsubsection{\texorpdfstring{\_\_SEV}{\_\_SEV}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+S\+EV~\+\_\+\+\_\+builtin\+\_\+arm\+\_\+sev}
+
+
+
+Send Event. 
+
+Send Event is a hint instruction. It causes an event to be signaled to the C\+PU. \mbox{\Hypertarget{group___c_m_s_i_s___core___instruction_interface_gaac6cc7dd4325d9cb40d3290fa5244b3d}\label{group___c_m_s_i_s___core___instruction_interface_gaac6cc7dd4325d9cb40d3290fa5244b3d}} 
+\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_WFE@{\_\_WFE}}
+\index{\_\_WFE@{\_\_WFE}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
+\doxysubsubsection{\texorpdfstring{\_\_WFE}{\_\_WFE}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+W\+FE~\+\_\+\+\_\+wfe}
+
+
+
+Wait For Event. 
+
+Wait For Event is a hint instruction that permits the processor to enter a low-\/power state until one of a number of events occurs. \mbox{\Hypertarget{group___c_m_s_i_s___core___instruction_interface_gaac6cc7dd4325d9cb40d3290fa5244b3d}\label{group___c_m_s_i_s___core___instruction_interface_gaac6cc7dd4325d9cb40d3290fa5244b3d}} 
+\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_WFE@{\_\_WFE}}
+\index{\_\_WFE@{\_\_WFE}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
+\doxysubsubsection{\texorpdfstring{\_\_WFE}{\_\_WFE}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+W\+FE~\+\_\+\+\_\+builtin\+\_\+arm\+\_\+wfe}
+
+
+
+Wait For Event. 
+
+Wait For Event is a hint instruction that permits the processor to enter a low-\/power state until one of a number of events occurs. \mbox{\Hypertarget{group___c_m_s_i_s___core___instruction_interface_gad23bf2b78a9a4524157c9de0d30b7448}\label{group___c_m_s_i_s___core___instruction_interface_gad23bf2b78a9a4524157c9de0d30b7448}} 
+\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_WFI@{\_\_WFI}}
+\index{\_\_WFI@{\_\_WFI}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
+\doxysubsubsection{\texorpdfstring{\_\_WFI}{\_\_WFI}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+W\+FI~\+\_\+\+\_\+wfi}
+
+
+
+Wait For Interrupt. 
+
+Wait For Interrupt is a hint instruction that suspends execution until one of a number of events occurs. \mbox{\Hypertarget{group___c_m_s_i_s___core___instruction_interface_gad23bf2b78a9a4524157c9de0d30b7448}\label{group___c_m_s_i_s___core___instruction_interface_gad23bf2b78a9a4524157c9de0d30b7448}} 
+\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_WFI@{\_\_WFI}}
+\index{\_\_WFI@{\_\_WFI}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
+\doxysubsubsection{\texorpdfstring{\_\_WFI}{\_\_WFI}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+W\+FI~\+\_\+\+\_\+builtin\+\_\+arm\+\_\+wfi}
+
+
+
+Wait For Interrupt. 
+
+Wait For Interrupt is a hint instruction that suspends execution until one of a number of events occurs. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___c_m_s_i_s___core___instruction_interface_gab926fe7178a379c3a7c0410b06fcb661}\label{group___c_m_s_i_s___core___instruction_interface_gab926fe7178a379c3a7c0410b06fcb661}} 
+\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_attribute\_\_@{\_\_attribute\_\_}}
+\index{\_\_attribute\_\_@{\_\_attribute\_\_}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
+\doxysubsubsection{\texorpdfstring{\_\_attribute\_\_()}{\_\_attribute\_\_()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \+\_\+\+\_\+attribute\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{(always\+\_\+inline)}]{ }\end{DoxyParamCaption})}
+
+
+
+Reverse bit order of value. 
+
+Enable I\+RQ Interrupts.
+
+Set Priority Mask.
+
+Get Priority Mask.
+
+Set Main Stack Pointer.
+
+Get Main Stack Pointer.
+
+Set Process Stack Pointer.
+
+Get Process Stack Pointer.
+
+Get x\+P\+SR Register.
+
+Get A\+P\+SR Register.
+
+Get I\+P\+SR Register.
+
+Set Control Register.
+
+Get Control Register.
+
+Disable I\+RQ Interrupts.
+
+Reverse byte order (16 bit)
+
+Reverse byte order (32 bit)
+
+Data Memory Barrier.
+
+Data Synchronization Barrier.
+
+Instruction Synchronization Barrier.
+
+Send Event.
+
+Wait For Event.
+
+Wait For Interrupt.
+
+No Operation.
+
+Rotate Right in unsigned value (32 bit)
+
+Reverse byte order in signed short value.
+
+Reverses the bit order of the given value. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & Value to reverse \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reversed value
+\end{DoxyReturn}
+Reverses the byte order in a signed short value with sign extension to integer. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & Value to reverse \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reversed value
+\end{DoxyReturn}
+Rotate Right (immediate) provides the value of the contents of a register rotated by a variable number of bits. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em op1} & Value to rotate \\
+\hline
+\mbox{\texttt{ in}}  & {\em op2} & Number of Bits to rotate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Rotated value
+\end{DoxyReturn}
+No Operation does nothing. This instruction can be used for code alignment purposes.
+
+Wait For Interrupt is a hint instruction that suspends execution until one of a number of events occurs.
+
+Wait For Event is a hint instruction that permits the processor to enter a low-\/power state until one of a number of events occurs.
+
+Send Event is a hint instruction. It causes an event to be signaled to the C\+PU.
+
+Instruction Synchronization Barrier flushes the pipeline in the processor, so that all instructions following the I\+SB are fetched from cache or memory, after the instruction has been completed.
+
+Acts as a special kind of Data Memory Barrier. It completes when all explicit memory accesses before this instruction complete.
+
+Ensures the apparent order of the explicit memory operations before and after the instruction, without ensuring their completion.
+
+Reverses the byte order in integer value. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & Value to reverse \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reversed value
+\end{DoxyReturn}
+Reverses the byte order in two unsigned short values. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & Value to reverse \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reversed value
+\end{DoxyReturn}
+Rotate Right (immediate) provides the value of the contents of a register rotated by a variable number of bits. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & Value to rotate \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & Number of Bits to rotate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Rotated value
+\end{DoxyReturn}
+Disables I\+RQ interrupts by setting the I-\/bit in the C\+P\+SR. Can only be executed in Privileged modes.
+
+Returns the content of the Control Register. \begin{DoxyReturn}{Returns}
+Control Register value
+\end{DoxyReturn}
+Writes the given value to the Control Register. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em control} & Control Register value to set\\
+\hline
+\end{DoxyParams}
+Returns the content of the I\+P\+SR Register. \begin{DoxyReturn}{Returns}
+I\+P\+SR Register value
+\end{DoxyReturn}
+Returns the content of the A\+P\+SR Register. \begin{DoxyReturn}{Returns}
+A\+P\+SR Register value
+\end{DoxyReturn}
+Returns the content of the x\+P\+SR Register. \begin{DoxyReturn}{Returns}
+x\+P\+SR Register value
+\end{DoxyReturn}
+Returns the current value of the Process Stack Pointer (P\+SP). \begin{DoxyReturn}{Returns}
+P\+SP Register value
+\end{DoxyReturn}
+Assigns the given value to the Process Stack Pointer (P\+SP). 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em top\+Of\+Proc\+Stack} & Process Stack Pointer value to set\\
+\hline
+\end{DoxyParams}
+Returns the current value of the Main Stack Pointer (M\+SP). \begin{DoxyReturn}{Returns}
+M\+SP Register value
+\end{DoxyReturn}
+Assigns the given value to the Main Stack Pointer (M\+SP). 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em top\+Of\+Main\+Stack} & Main Stack Pointer value to set\\
+\hline
+\end{DoxyParams}
+Returns the current state of the priority mask bit from the Priority Mask Register. \begin{DoxyReturn}{Returns}
+Priority Mask value
+\end{DoxyReturn}
+Assigns the given value to the Priority Mask Register. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em pri\+Mask} & Priority Mask\\
+\hline
+\end{DoxyParams}
+Enables I\+RQ interrupts by clearing the I-\/bit in the C\+P\+SR. Can only be executed in Privileged modes. \mbox{\Hypertarget{group___c_m_s_i_s___core___instruction_interface_gae84a2733711339c5eefeb0d899506b96}\label{group___c_m_s_i_s___core___instruction_interface_gae84a2733711339c5eefeb0d899506b96}} 
+\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_attribute\_\_@{\_\_attribute\_\_}}
+\index{\_\_attribute\_\_@{\_\_attribute\_\_}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
+\doxysubsubsection{\texorpdfstring{\_\_attribute\_\_()}{\_\_attribute\_\_()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \+\_\+\+\_\+attribute\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{(section(\char`\"{}.rev16\+\_\+text\char`\"{}))}]{ }\end{DoxyParamCaption})}
+
+
+
+Reverse byte order (16 bit) 
+
+Reverses the byte order in two unsigned short values. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & Value to reverse \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reversed value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___c_m_s_i_s___core___instruction_interface_ga8e7a866927d3257a82b884ad14dbef4c}\label{group___c_m_s_i_s___core___instruction_interface_ga8e7a866927d3257a82b884ad14dbef4c}} 
+\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!\_\_attribute\_\_@{\_\_attribute\_\_}}
+\index{\_\_attribute\_\_@{\_\_attribute\_\_}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
+\doxysubsubsection{\texorpdfstring{\_\_attribute\_\_()}{\_\_attribute\_\_()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \+\_\+\+\_\+attribute\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{(section(\char`\"{}.revsh\+\_\+text\char`\"{}))}]{ }\end{DoxyParamCaption})}
+
+
+
+Reverse byte order in signed short value. 
+
+Reverses the byte order in a signed short value with sign extension to integer. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & Value to reverse \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reversed value 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{group___c_m_s_i_s___core___instruction_interface_gadb2bb33809b6f35ba4d176cbec7c7b75}\label{group___c_m_s_i_s___core___instruction_interface_gadb2bb33809b6f35ba4d176cbec7c7b75}} 
+\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!op2@{op2}}
+\index{op2@{op2}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
+\doxysubsubsection{\texorpdfstring{op2}{op2}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily uint32\+\_\+t op2}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  \textcolor{keywordflow}{return} (op1 >> \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gadb2bb33809b6f35ba4d176cbec7c7b75}{op2}}) | (op1 << (32U -\/ \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gadb2bb33809b6f35ba4d176cbec7c7b75}{op2}}))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group___c_m_s_i_s___core___instruction_interface_gadb2bb33809b6f35ba4d176cbec7c7b75}\label{group___c_m_s_i_s___core___instruction_interface_gadb2bb33809b6f35ba4d176cbec7c7b75}} 
+\index{CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}!op2@{op2}}
+\index{op2@{op2}!CMSIS Core Instruction Interface@{CMSIS Core Instruction Interface}}
+\doxysubsubsection{\texorpdfstring{op2}{op2}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily uint32\+\_\+t op2}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  \textcolor{keywordflow}{return} (op1 >> \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gadb2bb33809b6f35ba4d176cbec7c7b75}{op2}}) | (op1 << (32U -\/ \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gadb2bb33809b6f35ba4d176cbec7c7b75}{op2}}))}
+
+\end{DoxyCode}

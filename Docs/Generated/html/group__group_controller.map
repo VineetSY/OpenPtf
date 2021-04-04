@@ -1,0 +1,8 @@
+<map id="Controller Functions" name="Controller Functions">
+<area shape="rect" id="node1" href="$group__inv__clarke.html" title="Inverse Clarke transform converts the two&#45;coordinate time invariant vector into instantaneous stator ..." alt="" coords="214,5,374,45"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,119,157,145"/>
+<area shape="rect" id="node3" href="$group__park.html" title="Forward Park transform converts the input two&#45;coordinate vector to flux and torque components...." alt="" coords="212,70,376,95"/>
+<area shape="rect" id="node4" href="$group__clarke.html" title="Forward Clarke transform converts the instantaneous stator phases into a two&#45;coordinate time invarian..." alt="" coords="205,119,383,145"/>
+<area shape="rect" id="node5" href="$group___p_i_d.html" title="A Proportional Integral Derivative (PID) controller is a generic feedback control loop mechanism wide..." alt="" coords="225,169,363,194"/>
+<area shape="rect" id="node6" href="$group__inv__park.html" title="Inverse Park transform converts the input flux and torque components to two&#45;coordinate vector." alt="" coords="221,219,367,259"/>
+</map>

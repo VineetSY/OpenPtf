@@ -1,0 +1,91 @@
+\hypertarget{_d_m_a_8c}{}\doxysection{/home/vineet/\+Workspace/\+Open\+Ptf (copy)/src/\+Drivers/\+D\+M\+A/\+D\+MA.c File Reference}
+\label{_d_m_a_8c}\index{/home/vineet/Workspace/OpenPtf (copy)/src/Drivers/DMA/DMA.c@{/home/vineet/Workspace/OpenPtf (copy)/src/Drivers/DMA/DMA.c}}
+{\ttfamily \#include \char`\"{}Cmn\+\_\+\+Types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Project\+\_\+\+Cfg.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stm32l4xx.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}I\+N\+T\+R\+P\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}D\+M\+A.\+h\char`\"{}}\newline
+Include dependency graph for D\+M\+A.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_d_m_a_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_d_m_a_8c_a92a2de6fa92b36d1801358ea9b12273b}{D\+M\+A\+\_\+\+Init}} (void)
+\item 
+void \mbox{\hyperlink{_d_m_a_8c_a4fbc524ad88be37ed9e82e7768124da5}{D\+M\+A\+\_\+\+Start}} (void)
+\item 
+void \mbox{\hyperlink{_d_m_a_8c_a05c514c87e07c8ff54c019de868bac03}{D\+M\+A\+\_\+\+Stop}} (void)
+\item 
+void \mbox{\hyperlink{_d_m_a_8c_ad770458f8839bc9166f1e3bbbb10b1ea}{D\+M\+A\+\_\+\+Shutdown}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_cmn___types_8h_a2e00abb078d312d1d8c4fbcd6be343d8}{uint16}} \mbox{\hyperlink{_d_m_a_8c_a0e02b3c1e94277df041fe92f65a3f795}{A\+D\+C1\+\_\+\+Data\+\_\+\+Buffer}} \mbox{[}2\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_d_m_a_8c_a92a2de6fa92b36d1801358ea9b12273b}\label{_d_m_a_8c_a92a2de6fa92b36d1801358ea9b12273b}} 
+\index{DMA.c@{DMA.c}!DMA\_Init@{DMA\_Init}}
+\index{DMA\_Init@{DMA\_Init}!DMA.c@{DMA.c}}
+\doxysubsubsection{\texorpdfstring{DMA\_Init()}{DMA\_Init()}}
+{\footnotesize\ttfamily void D\+M\+A\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=245pt]{_d_m_a_8c_a92a2de6fa92b36d1801358ea9b12273b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{_d_m_a_8c_a92a2de6fa92b36d1801358ea9b12273b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_d_m_a_8c_ad770458f8839bc9166f1e3bbbb10b1ea}\label{_d_m_a_8c_ad770458f8839bc9166f1e3bbbb10b1ea}} 
+\index{DMA.c@{DMA.c}!DMA\_Shutdown@{DMA\_Shutdown}}
+\index{DMA\_Shutdown@{DMA\_Shutdown}!DMA.c@{DMA.c}}
+\doxysubsubsection{\texorpdfstring{DMA\_Shutdown()}{DMA\_Shutdown()}}
+{\footnotesize\ttfamily void D\+M\+A\+\_\+\+Shutdown (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_d_m_a_8c_a4fbc524ad88be37ed9e82e7768124da5}\label{_d_m_a_8c_a4fbc524ad88be37ed9e82e7768124da5}} 
+\index{DMA.c@{DMA.c}!DMA\_Start@{DMA\_Start}}
+\index{DMA\_Start@{DMA\_Start}!DMA.c@{DMA.c}}
+\doxysubsubsection{\texorpdfstring{DMA\_Start()}{DMA\_Start()}}
+{\footnotesize\ttfamily void D\+M\+A\+\_\+\+Start (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{_d_m_a_8c_a4fbc524ad88be37ed9e82e7768124da5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_d_m_a_8c_a05c514c87e07c8ff54c019de868bac03}\label{_d_m_a_8c_a05c514c87e07c8ff54c019de868bac03}} 
+\index{DMA.c@{DMA.c}!DMA\_Stop@{DMA\_Stop}}
+\index{DMA\_Stop@{DMA\_Stop}!DMA.c@{DMA.c}}
+\doxysubsubsection{\texorpdfstring{DMA\_Stop()}{DMA\_Stop()}}
+{\footnotesize\ttfamily void D\+M\+A\+\_\+\+Stop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_d_m_a_8c_a0e02b3c1e94277df041fe92f65a3f795}\label{_d_m_a_8c_a0e02b3c1e94277df041fe92f65a3f795}} 
+\index{DMA.c@{DMA.c}!ADC1\_Data\_Buffer@{ADC1\_Data\_Buffer}}
+\index{ADC1\_Data\_Buffer@{ADC1\_Data\_Buffer}!DMA.c@{DMA.c}}
+\doxysubsubsection{\texorpdfstring{ADC1\_Data\_Buffer}{ADC1\_Data\_Buffer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_cmn___types_8h_a2e00abb078d312d1d8c4fbcd6be343d8}{uint16}} A\+D\+C1\+\_\+\+Data\+\_\+\+Buffer\mbox{[}2\mbox{]}}
+

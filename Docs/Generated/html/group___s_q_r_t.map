@@ -1,0 +1,4 @@
+<map id="Square Root" name="Square Root">
+<area shape="rect" id="node1" href="$group__group_fast_math.html" title="This set of functions provides a fast approximation to sine, cosine, and square root...." alt="" coords="5,5,156,31"/>
+<area shape="rect" id="node2" title="Computes the square root of a number. There are separate functions for Q15, Q31, and floating&#45;point d..." alt="" coords="204,5,305,31"/>
+</map>

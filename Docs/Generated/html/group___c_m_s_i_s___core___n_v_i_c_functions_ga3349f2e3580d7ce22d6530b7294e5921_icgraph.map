@@ -1,0 +1,5 @@
+<map id="NVIC_EnableIRQ" name="NVIC_EnableIRQ">
+<area shape="rect" id="node1" title="Enable External Interrupt." alt="" coords="340,5,468,32"/>
+<area shape="rect" id="node2" href="$_i_n_t_r_p_t_8h.html#aa283543bc8ca06c4275bf4c94ac4dae9" title=" " alt="" coords="175,5,292,32"/>
+<area shape="rect" id="node3" href="$_t_i_m_e_r_8h.html#a3eda2c19ee34b0f127a1cc91162b01e6" title=" " alt="" coords="5,5,127,32"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="System Tick Timer (SysTick)" name="System Tick Timer (SysTick)">
+<area shape="rect" id="node1" title="Type definitions for the System Timer Registers." alt="" coords="216,37,364,77"/>
+<area shape="rect" id="node4" href="$group___c_m_s_i_s___core_debug.html" title="Cortex&#45;M0 Core Debug Registers (DCB registers, SHCSR, and DFSR) are only accessible over DAP and not ..." alt="" coords="413,5,575,45"/>
+<area shape="rect" id="node5" href="$group___c_m_s_i_s___i_t_m.html" title="Type definitions for the Instrumentation Trace Macrocell (ITM)" alt="" coords="412,69,576,109"/>
+<area shape="rect" id="node2" href="$group___c_m_s_i_s___s_cn_s_c_b.html" title="Type definitions for the System Control and ID Register not in the SCB." alt="" coords="9,5,164,45"/>
+<area shape="rect" id="node3" href="$group___c_m_s_i_s___s_c_b.html" title="Type definitions for the System Control Block Registers." alt="" coords="5,69,168,109"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="NVIC_SetPriority" name="NVIC_SetPriority">
+<area shape="rect" id="node1" title="Set Interrupt Priority." alt="" coords="343,31,472,57"/>
+<area shape="rect" id="node2" href="$_i_n_t_r_p_t_8h.html#aa283543bc8ca06c4275bf4c94ac4dae9" title=" " alt="" coords="176,5,293,32"/>
+<area shape="rect" id="node4" href="$group___c_m_s_i_s___core___n_v_i_c_functions.html#gae4e8f0238527c69f522029b93c8e5b78" title="System Tick Configuration." alt="" coords="175,56,295,83"/>
+<area shape="rect" id="node3" href="$_t_i_m_e_r_8h.html#a3eda2c19ee34b0f127a1cc91162b01e6" title=" " alt="" coords="5,5,127,32"/>
+</map>

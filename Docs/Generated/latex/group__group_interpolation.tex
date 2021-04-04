@@ -1,0 +1,27 @@
+\hypertarget{group__group_interpolation}{}\doxysection{Interpolation Functions}
+\label{group__group_interpolation}\index{Interpolation Functions@{Interpolation Functions}}
+
+
+These functions perform 1-\/ and 2-\/dimensional interpolation of data. Linear interpolation is used for 1-\/dimensional data and bilinear interpolation is used for 2-\/dimensional data.  
+
+
+Collaboration diagram for Interpolation Functions\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__group_interpolation}
+\end{center}
+\end{figure}
+\doxysubsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___linear_interpolate}{Linear Interpolation}}
+\begin{DoxyCompactList}\small\item\em Linear interpolation is a method of curve fitting using linear polynomials. Linear interpolation works by effectively drawing a straight line between two neighboring samples and returning the appropriate point along that line. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___bilinear_interpolate}{Bilinear Interpolation}}
+\begin{DoxyCompactList}\small\item\em Bilinear interpolation is an extension of linear interpolation applied to a two dimensional grid. The underlying function {\ttfamily f(x, y)} is sampled on a regular grid and the interpolation process determines values between the grid points. Bilinear interpolation is equivalent to two step linear interpolation, first in the x-\/dimension and then in the y-\/dimension. Bilinear interpolation is often used in image processing to rescale images. The C\+M\+S\+IS D\+SP library provides bilinear interpolation functions for Q7, Q15, Q31, and floating-\/point data types. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+These functions perform 1-\/ and 2-\/dimensional interpolation of data. Linear interpolation is used for 1-\/dimensional data and bilinear interpolation is used for 2-\/dimensional data. 
+

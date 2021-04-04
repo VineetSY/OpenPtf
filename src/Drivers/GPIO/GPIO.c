@@ -1,13 +1,13 @@
-/*************************************************************************************************
- * Module name: GPIO.c
- *
- * Purpose: Configuration of all GPIO pins and PORT modes.
- *
- * Created on: 18-Apr-2020
- *
- * Author: Vineet
- *************************************************************************************************/
-
+/******************************************************************
+* Title                 :   GPIO   
+* Filename              :   GPIO.c
+* Author                :   Vineet
+* Origin Date           :   03/04/2021
+* Version               :   1.0.0
+* Compiler              :   Arm_Gcc_Eabi
+* Target                :   STM32L4
+* Notes                 :   Configuration of all GPIO pins and PORT modes.
+******************************************************************/
 /*************************************************************************************************
  *	Includes
  *************************************************************************************************/
@@ -64,13 +64,15 @@ static void GPIO_Pin_Config(GPIO_PinType_e Pin);
  *************************************************************************************************/
 
 /**************************************************************************************************
- *  @name - GPIO_BtnB1State_Get
+ * Function :  GPIO_BtnB1State_Get(void)
+ *//**
+ * \b Description:
+ * 
+ * this function is used to get the button B1 state
  *
- *  @summary - Button B1 state read
+ *  @param [in]	void
  *
- *  @param - NA
- *
- *  @retval- NA
+ *  @retval	void
  *************************************************************************************************/
 GPIO_BtnState_e GPIO_BtnB1State_Get(void)
 {
@@ -78,13 +80,13 @@ GPIO_BtnState_e GPIO_BtnB1State_Get(void)
 }
 
 /**************************************************************************************************
- *  @name - GPIO_BtnB1_Config
+ *  Function : GPIO_BtnB1_Config
+ *//**
+ *  \b Description: Nucleo Board User Button B1 at PC13
  *
- *  @summary - Nucleo Board User Button B1 at PC13
+ *  @param	NA
  *
- *  @param - NA
- *
- *  @retval- NA
+ *  @retval	NA
  *************************************************************************************************/
 void GPIO_BtnB1_Config(void)
 {
@@ -98,13 +100,13 @@ void GPIO_BtnB1_Config(void)
 }
 
 /**************************************************************************************************
- *  @name - GPIO_UsrBtnB1_Update
+ *  Function : GPIO_UsrBtnB1_Update
  *
- *  @summary - Button B1 state
+ *  \b Description: Button B1 state
  *
- *  @param - NA
+ *  @param	NA
  *
- *  @retval- NA
+ *  @retval	NA
  *************************************************************************************************/
 void GPIO_UsrBtnB1_Update(void)
 {
@@ -123,13 +125,13 @@ void GPIO_UsrBtnB1_Update(void)
 
 
 /**************************************************************************************************
- *  @name - GPIO_Init
+ *  Function : GPIO_Init
  *
- *  @summary - Generic function to initialize the GPIO pins
+ *  \b Description: Generic function to initialize the GPIO pins
  *
- *  @param - NA
+ *  @param [in]	NA
  *
- *  @retval- NA
+ *  @retval	NA
  *************************************************************************************************/
 void GPIO_Init(void)
 {
@@ -171,13 +173,13 @@ void GPIO_Init(void)
 
 
 /**************************************************************************************************
- *  @name - GPIO_Pin_Config
+ *  Function : GPIO_Pin_Config
  *
- *  @summary - GPIO pin configuration update
+ *  \b Description: GPIO pin configuration update
  *
- *  @param [in] - Pin: GPIO pin number to configure
+ *  @param [in]	Pin is GPIO pin number to configure
  *
- *  @retval- NA
+ *  @retval	NA
  **************************************************************************************************/
 void GPIO_Pin_Config(GPIO_PinType_e Pin)
 {
@@ -201,6 +203,15 @@ void GPIO_Pin_Config(GPIO_PinType_e Pin)
 	return;
 }
 
+/**************************************************************************************************
+ *  Function : GPIO_Pwm_Config
+ *//**
+ *  \b Description: GPIO Pwm configuration update
+ *
+ *  @param [in]	Val is pwm value to configure
+ *
+ *  @retval	NA
+ **************************************************************************************************/
 void GPIO_Pwm_Config(uint32 val)
 {
 	TIM4->CCR1 = val;
@@ -210,19 +221,19 @@ void GPIO_Pwm_Config(uint32 val)
 }
 
 /**************************************************************************************************
- *  @name - GPIO_PinMode_Update
+ *  Function : GPIO_PinMode_Update
  *
- *  @summary - GPIO pin digital output mode update
+ *  \b Description: GPIO pin digital output mode update
  *
- *  @param [in] - Pin: GPIO pin number to select
+ *  @param [in]	Pin is GPIO pin number to select
  *  				@arg @ref GPIO_PA5  GPIO port a pin 5
  *  				@arg @ref GPIO_PA6  GPIO port a pin 5
  *
- *  @param [in] - Mode: output mode for the selected pin
+ *  @param [in]	Mode is output mode for the selected pin
  *  				@arg @ref MODE_LOW  GPIO pin digital output low mode
  *  				@arg @ref MODE_HIGH  GPIO pin digital output high mode
  *
- *  @retval- NA
+ *  @retval	NA
  **************************************************************************************************/
 void GPIO_PinMode_Update(uint8 Pin, uint8 Mode)
 {

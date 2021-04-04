@@ -1,0 +1,5 @@
+<map id="Interpolation Functions" name="Interpolation Functions">
+<area shape="rect" id="node1" title="These functions perform 1&#45; and 2&#45;dimensional interpolation of data. Linear interpolation is used for ..." alt="" coords="5,31,176,56"/>
+<area shape="rect" id="node2" href="$group___bilinear_interpolate.html" title="Bilinear interpolation is an extension of linear interpolation applied to a two dimensional grid...." alt="" coords="224,5,383,31"/>
+<area shape="rect" id="node3" href="$group___linear_interpolate.html" title="Linear interpolation is a method of curve fitting using linear polynomials. Linear interpolation work..." alt="" coords="229,55,378,80"/>
+</map>

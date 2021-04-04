@@ -1,0 +1,165 @@
+\hypertarget{_g_p_i_o_8c}{}\doxysection{/home/vineet/\+Workspace/\+Open\+Ptf (copy)/src/\+Drivers/\+G\+P\+I\+O/\+G\+P\+IO.c File Reference}
+\label{_g_p_i_o_8c}\index{/home/vineet/Workspace/OpenPtf (copy)/src/Drivers/GPIO/GPIO.c@{/home/vineet/Workspace/OpenPtf (copy)/src/Drivers/GPIO/GPIO.c}}
+{\ttfamily \#include \char`\"{}Cmn\+\_\+\+Types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Project\+\_\+\+Cfg.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stm32l4xx.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}G\+P\+I\+O.\+h\char`\"{}}\newline
+Include dependency graph for G\+P\+I\+O.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_g_p_i_o_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_i_o_pin_cfg_table__st}{I\+O\+Pin\+Cfg\+Table\+\_\+st}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_o_pin_cfg_table__st}{I\+O\+Pin\+Cfg\+Table\+\_\+st}} \mbox{\hyperlink{_g_p_i_o_8c_a39fb64f37ead6cc34fa07bac57a8d930}{I\+O\+Pin\+Cfg\+Table\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_g_p_i_o_8h_a6a6323301625be6ff870d8bbfab784a5}{G\+P\+I\+O\+\_\+\+Btn\+State\+\_\+e}} \mbox{\hyperlink{_g_p_i_o_8c_ad2a89d333fddac41a4ea88e3c459a186}{G\+P\+I\+O\+\_\+\+Btn\+B1\+State\+\_\+\+Get}} (void)
+\item 
+void \mbox{\hyperlink{_g_p_i_o_8c_a8636fce17029c86c34c57a3dc36f923b}{G\+P\+I\+O\+\_\+\+Btn\+B1\+\_\+\+Config}} (void)
+\item 
+void \mbox{\hyperlink{_g_p_i_o_8c_a4c1bf8cb3081ab705a559eada0689d5a}{G\+P\+I\+O\+\_\+\+Usr\+Btn\+B1\+\_\+\+Update}} (void)
+\item 
+void \mbox{\hyperlink{_g_p_i_o_8c_a90363099dc984eccffd2a7ad34def32d}{G\+P\+I\+O\+\_\+\+Init}} (void)
+\item 
+void \mbox{\hyperlink{_g_p_i_o_8c_a7680868c481ac1c6a107adb3d748cc18}{G\+P\+I\+O\+\_\+\+Pwm\+\_\+\+Config}} (\mbox{\hyperlink{_cmn___types_8h_a9560e25c315bae45d1ed4e2ce49ce55a}{uint32}} val)
+\item 
+void \mbox{\hyperlink{_g_p_i_o_8c_ac540475ebef57fff5d1f199e58f62819}{G\+P\+I\+O\+\_\+\+Pin\+Mode\+\_\+\+Update}} (\mbox{\hyperlink{_cmn___types_8h_adde6aaee8457bee49c2a92621fe22b79}{uint8}} Pin, \mbox{\hyperlink{_cmn___types_8h_adde6aaee8457bee49c2a92621fe22b79}{uint8}} Mode)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_g_p_i_o_8c_a39fb64f37ead6cc34fa07bac57a8d930}\label{_g_p_i_o_8c_a39fb64f37ead6cc34fa07bac57a8d930}} 
+\index{GPIO.c@{GPIO.c}!IOPinCfgTable\_t@{IOPinCfgTable\_t}}
+\index{IOPinCfgTable\_t@{IOPinCfgTable\_t}!GPIO.c@{GPIO.c}}
+\doxysubsubsection{\texorpdfstring{IOPinCfgTable\_t}{IOPinCfgTable\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_o_pin_cfg_table__st}{I\+O\+Pin\+Cfg\+Table\+\_\+st}} \mbox{\hyperlink{_g_p_i_o_8c_a39fb64f37ead6cc34fa07bac57a8d930}{I\+O\+Pin\+Cfg\+Table\+\_\+t}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_g_p_i_o_8c_a8636fce17029c86c34c57a3dc36f923b}\label{_g_p_i_o_8c_a8636fce17029c86c34c57a3dc36f923b}} 
+\index{GPIO.c@{GPIO.c}!GPIO\_BtnB1\_Config@{GPIO\_BtnB1\_Config}}
+\index{GPIO\_BtnB1\_Config@{GPIO\_BtnB1\_Config}!GPIO.c@{GPIO.c}}
+\doxysubsubsection{\texorpdfstring{GPIO\_BtnB1\_Config()}{GPIO\_BtnB1\_Config()}}
+{\footnotesize\ttfamily void G\+P\+I\+O\+\_\+\+Btn\+B1\+\_\+\+Config (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+{\bfseries{Description\+:}} Nucleo Board User Button B1 at P\+C13
+
+
+\begin{DoxyParams}{Parameters}
+{\em NA} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em NA} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{_g_p_i_o_8c_ad2a89d333fddac41a4ea88e3c459a186}\label{_g_p_i_o_8c_ad2a89d333fddac41a4ea88e3c459a186}} 
+\index{GPIO.c@{GPIO.c}!GPIO\_BtnB1State\_Get@{GPIO\_BtnB1State\_Get}}
+\index{GPIO\_BtnB1State\_Get@{GPIO\_BtnB1State\_Get}!GPIO.c@{GPIO.c}}
+\doxysubsubsection{\texorpdfstring{GPIO\_BtnB1State\_Get()}{GPIO\_BtnB1State\_Get()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_g_p_i_o_8h_a6a6323301625be6ff870d8bbfab784a5}{G\+P\+I\+O\+\_\+\+Btn\+State\+\_\+e}} G\+P\+I\+O\+\_\+\+Btn\+B1\+State\+\_\+\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+{\bfseries{Description\+:}} 
+
+this function is used to get the button B1 state
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em void} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em void} & \\
+\hline
+\end{DoxyRetVals}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_g_p_i_o_8c_ad2a89d333fddac41a4ea88e3c459a186_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_g_p_i_o_8c_a90363099dc984eccffd2a7ad34def32d}\label{_g_p_i_o_8c_a90363099dc984eccffd2a7ad34def32d}} 
+\index{GPIO.c@{GPIO.c}!GPIO\_Init@{GPIO\_Init}}
+\index{GPIO\_Init@{GPIO\_Init}!GPIO.c@{GPIO.c}}
+\doxysubsubsection{\texorpdfstring{GPIO\_Init()}{GPIO\_Init()}}
+{\footnotesize\ttfamily void G\+P\+I\+O\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{_g_p_i_o_8c_a90363099dc984eccffd2a7ad34def32d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_g_p_i_o_8c_ac540475ebef57fff5d1f199e58f62819}\label{_g_p_i_o_8c_ac540475ebef57fff5d1f199e58f62819}} 
+\index{GPIO.c@{GPIO.c}!GPIO\_PinMode\_Update@{GPIO\_PinMode\_Update}}
+\index{GPIO\_PinMode\_Update@{GPIO\_PinMode\_Update}!GPIO.c@{GPIO.c}}
+\doxysubsubsection{\texorpdfstring{GPIO\_PinMode\_Update()}{GPIO\_PinMode\_Update()}}
+{\footnotesize\ttfamily void G\+P\+I\+O\+\_\+\+Pin\+Mode\+\_\+\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_cmn___types_8h_adde6aaee8457bee49c2a92621fe22b79}{uint8}}}]{Pin,  }\item[{\mbox{\hyperlink{_cmn___types_8h_adde6aaee8457bee49c2a92621fe22b79}{uint8}}}]{Mode }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_g_p_i_o_8c_ac540475ebef57fff5d1f199e58f62819_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_g_p_i_o_8c_a7680868c481ac1c6a107adb3d748cc18}\label{_g_p_i_o_8c_a7680868c481ac1c6a107adb3d748cc18}} 
+\index{GPIO.c@{GPIO.c}!GPIO\_Pwm\_Config@{GPIO\_Pwm\_Config}}
+\index{GPIO\_Pwm\_Config@{GPIO\_Pwm\_Config}!GPIO.c@{GPIO.c}}
+\doxysubsubsection{\texorpdfstring{GPIO\_Pwm\_Config()}{GPIO\_Pwm\_Config()}}
+{\footnotesize\ttfamily void G\+P\+I\+O\+\_\+\+Pwm\+\_\+\+Config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_cmn___types_8h_a9560e25c315bae45d1ed4e2ce49ce55a}{uint32}}}]{val }\end{DoxyParamCaption})}
+
+{\bfseries{Description\+:}} G\+P\+IO Pwm configuration update
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Val} & is pwm value to configure\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em NA} & \\
+\hline
+\end{DoxyRetVals}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_g_p_i_o_8c_a7680868c481ac1c6a107adb3d748cc18_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_g_p_i_o_8c_a4c1bf8cb3081ab705a559eada0689d5a}\label{_g_p_i_o_8c_a4c1bf8cb3081ab705a559eada0689d5a}} 
+\index{GPIO.c@{GPIO.c}!GPIO\_UsrBtnB1\_Update@{GPIO\_UsrBtnB1\_Update}}
+\index{GPIO\_UsrBtnB1\_Update@{GPIO\_UsrBtnB1\_Update}!GPIO.c@{GPIO.c}}
+\doxysubsubsection{\texorpdfstring{GPIO\_UsrBtnB1\_Update()}{GPIO\_UsrBtnB1\_Update()}}
+{\footnotesize\ttfamily void G\+P\+I\+O\+\_\+\+Usr\+Btn\+B1\+\_\+\+Update (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{_g_p_i_o_8c_a4c1bf8cb3081ab705a559eada0689d5a_icgraph}
+\end{center}
+\end{figure}

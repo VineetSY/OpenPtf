@@ -1,0 +1,6 @@
+<map id="arm_dct4_instance_q31" name="arm_dct4_instance_q31">
+<area shape="rect" id="node1" title="Instance structure for the Q31 DCT4/IDCT4 function." alt="" coords="163,184,339,211"/>
+<area shape="rect" id="node2" href="$structarm__rfft__instance__q31.html" title="Instance structure for the Q31 RFFT/RIFFT function." alt="" coords="7,95,173,121"/>
+<area shape="rect" id="node3" href="$structarm__cfft__instance__q31.html" title="Instance structure for the fixed&#45;point CFFT/CIFFT function." alt="" coords="5,5,175,32"/>
+<area shape="rect" id="node4" href="$structarm__cfft__radix4__instance__q31.html" title="Instance structure for the Q31 CFFT/CIFFT function." alt="" coords="197,95,415,121"/>
+</map>
