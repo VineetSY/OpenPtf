@@ -1,9 +1,9 @@
-<map id="/home/vineet/Workspace/OpenPtf (copy)/src/Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h" name="/home/vineet/Workspace/OpenPtf (copy)/src/Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h">
-<area shape="rect" id="node1" title="CMSIS STM32L476xx Device Peripheral Access Layer Header File." alt="" coords="52,5,267,76"/>
-<area shape="rect" id="node2" href="$core__cm4_8h.html" title="CMSIS Cortex&#45;M4 Core Peripheral Access Layer Header File." alt="" coords="111,124,208,151"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,199,76,225"/>
-<area shape="rect" id="node7" href="$system__stm32l4xx_8h.html" title="CMSIS Cortex&#45;M4 Device System Source File for STM32L4xx devices." alt="" coords="232,124,391,151"/>
-<area shape="rect" id="node4" href="$core__cm_instr_8h.html" title="CMSIS Cortex&#45;M Core Instruction Access Header File." alt="" coords="101,199,218,225"/>
-<area shape="rect" id="node5" href="$core__cm_func_8h.html" title="CMSIS Cortex&#45;M Core Function Access Header File." alt="" coords="241,199,360,225"/>
-<area shape="rect" id="node6" href="$core__cm_simd_8h.html" title="CMSIS Cortex&#45;M SIMD Header File." alt="" coords="385,199,507,225"/>
+<map id="src/Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h" name="src/Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h">
+<area shape="rect" id="node1" title="CMSIS STM32L476xx Device Peripheral Access Layer Header File." alt="" coords="23,5,296,47"/>
+<area shape="rect" id="node2" href="$core__cm4_8h.html" title="CMSIS Cortex&#45;M4 Core Peripheral Access Layer Header File." alt="" coords="111,95,208,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,169,76,196"/>
+<area shape="rect" id="node7" href="$system__stm32l4xx_8h.html" title="CMSIS Cortex&#45;M4 Device System Source File for STM32L4xx devices." alt="" coords="232,95,391,121"/>
+<area shape="rect" id="node4" href="$core__cm_instr_8h.html" title="CMSIS Cortex&#45;M Core Instruction Access Header File." alt="" coords="101,169,218,196"/>
+<area shape="rect" id="node5" href="$core__cm_func_8h.html" title="CMSIS Cortex&#45;M Core Function Access Header File." alt="" coords="241,169,360,196"/>
+<area shape="rect" id="node6" href="$core__cm_simd_8h.html" title="CMSIS Cortex&#45;M SIMD Header File." alt="" coords="385,169,507,196"/>
 </map>

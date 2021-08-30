@@ -1,4 +1,4 @@
-<map id="/home/vineet/Workspace/OpenPtf (copy)/src/Drivers/CMSIS/Include/core_cm4.h" name="/home/vineet/Workspace/OpenPtf (copy)/src/Drivers/CMSIS/Include/core_cm4.h">
-<area shape="rect" id="node1" title="CMSIS Cortex&#45;M4 Core Peripheral Access Layer Header File." alt="" coords="14,5,211,61"/>
-<area shape="rect" id="node2" href="$stm32l476xx_8h.html" title="CMSIS STM32L476xx Device Peripheral Access Layer Header File." alt="" coords="5,109,220,180"/>
+<map id="src/Drivers/CMSIS/Include/core_cm4.h" name="src/Drivers/CMSIS/Include/core_cm4.h">
+<area shape="rect" id="node1" title="CMSIS Cortex&#45;M4 Core Peripheral Access Layer Header File." alt="" coords="48,5,236,47"/>
+<area shape="rect" id="node2" href="$stm32l476xx_8h.html" title="CMSIS STM32L476xx Device Peripheral Access Layer Header File." alt="" coords="5,95,279,136"/>
 </map>

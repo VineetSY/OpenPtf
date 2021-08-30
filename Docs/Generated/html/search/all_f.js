@@ -180,6 +180,5 @@ var searchData=
   ['ospeedr1_9585',['OSPEEDR1',['../struct_i_o_pin_cfg_table__st.html#a5f15af82f5dceee7d5799010147a2dd3',1,'IOPinCfgTable_st']]],
   ['otg_5ffs_5firqn_9586',['OTG_FS_IRQn',['../group___peripheral__interrupt__number__definition.html#gga7e1129cd8a196f4284d41db3e82ad5c8aa60a30b7ef03446a46fd72e084911f7e',1,'stm32l476xx.h']]],
   ['otr_9587',['OTR',['../struct_o_p_a_m_p___type_def.html#ad35ad0a223a46ee5853526142d2da26c',1,'OPAMP_TypeDef']]],
-  ['otyper_9588',['OTYPER',['../struct_g_p_i_o___type_def.html#a9543592bda60cb5261075594bdeedac9',1,'GPIO_TypeDef::OTYPER()'],['../struct_i_o_pin_cfg_table__st.html#a9543592bda60cb5261075594bdeedac9',1,'IOPinCfgTable_st::OTYPER()']]],
-  ['overview_2etxt_9589',['overview.txt',['../overview_8txt.html',1,'']]]
+  ['otyper_9588',['OTYPER',['../struct_g_p_i_o___type_def.html#a9543592bda60cb5261075594bdeedac9',1,'GPIO_TypeDef::OTYPER()'],['../struct_i_o_pin_cfg_table__st.html#a9543592bda60cb5261075594bdeedac9',1,'IOPinCfgTable_st::OTYPER()']]]
 ];

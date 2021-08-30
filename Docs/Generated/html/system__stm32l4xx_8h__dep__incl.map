@@ -1,4 +1,4 @@
-<map id="/home/vineet/Workspace/OpenPtf (copy)/src/Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h" name="/home/vineet/Workspace/OpenPtf (copy)/src/Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h">
-<area shape="rect" id="node1" title="CMSIS Cortex&#45;M4 Device System Source File for STM32L4xx devices." alt="" coords="5,5,220,76"/>
-<area shape="rect" id="node2" href="$stm32l476xx_8h.html" title="CMSIS STM32L476xx Device Peripheral Access Layer Header File." alt="" coords="5,124,220,195"/>
+<map id="src/Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h" name="src/Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h">
+<area shape="rect" id="node1" title="CMSIS Cortex&#45;M4 Device System Source File for STM32L4xx devices." alt="" coords="30,5,254,61"/>
+<area shape="rect" id="node2" href="$stm32l476xx_8h.html" title="CMSIS STM32L476xx Device Peripheral Access Layer Header File." alt="" coords="5,109,279,151"/>
 </map>
