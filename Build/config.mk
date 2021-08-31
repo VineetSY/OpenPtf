@@ -1,15 +1,41 @@
 ## Filename : config.mk
 
+# --------------------------------------------------------------------------- #
 # Tools
 CC:=arm-none-eabi-gcc
 
+# --------------------------------------------------------------------------- #
 # Compile flags and options
-# CFLAGS:=-mcpu=cortex-m4 -std=gnu11 -g3
 # Machine architecture
 MACH=cortex-m4
-CFLAGS:=-mcpu=$(MACH) -std=gnu11 -g3 -DSTM32L476xx
-unknown_flags:=-O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"/home/vineet/Workspace/OpenPtf/Build/obj/%.d" -MT"/home/vineet/Workspace/OpenPtf/Build/obj/%.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb
+# Debug Level - using max level
+DBG_LVL:=-g3
+# Language Standard - Selecting C11 standard
+LANG_STD:=gnu11
+# Define Symbols
+TARGET:=STM32L476xx
+# Optimization level
+OPT_LVL:=-O0
+# Functions in their own sections
+FUNC_SECT:=-ffunction-sections
+# Data their in own sections
+DATA_SECT:=-fdata-sections
+# Compiler warning level
+WARN_LVL:=-Wall
+# Stack usage analysis
+STK_USG:=-fstack-usage
+# gcc specs file
+CC_SPCS:=--specs=nano.specs
+# Floating Point unit
+FPU:=-mfpu=fpv4-sp-d16
+# Floating point ABI
+FPU_ABI:=-mfloat-abi=hard
+# Instruction Set
+ISA:=-mthumb
+CFLAGS:=-mcpu=$(MACH) -std=$(LANG_STD) $(DBG_LVL) -D$(TARGET) $(OPT_LVL) $(FUNC_SECT) $(DATA_SECT) $(WARN_LVL) $(STK_USG)
+unknown_flags=-MMD -MP -MF"$(DEP_DIR)/%.d" -MT"$(DEP_DIR)/%.o" $(CC_SPCS) $(FPU) $(FPU_ABI) $(ISA)
 
+# --------------------------------------------------------------------------- #
 # Directories and paths
 # Source Directory
 SRC_DIR:=../src
@@ -18,11 +44,13 @@ SRC_DIR:=../src
 OBJ_DIR:=./obj
 # OBJ_DIR:=/home/vineet/Workspace/OpenPtf/Build/obj
 # Dependencies Directory
-DEP_DIR:=/home/vineet/Workspace/OpenPtf/Build/dep
+DEP_DIR:=./dep
+# DEP_DIR:=/home/vineet/Workspace/OpenPtf/Build/dep
 # Binary Directory
 BIN_DIR:=./bin
 # BIN_DIR:=/home/vineet/Workspace/OpenPtf/Build/bin
 
+# --------------------------------------------------------------------------- #
 # File type Variables
 # For SRCS we will find all the files that have .c 
 # extension in the SRC_DIR and assign the relative name
@@ -58,3 +86,6 @@ include_dirs:=../src \
 			  ../src/Bsw/PRINT \
 			  ../src/Drivers/ADC \
 			  ../src/Drivers/DMA
+
+## --------------------------------------------------------------------------
+# End of Makefile

@@ -17,3 +17,6 @@ modules = $(base_modules) \
 # -include $(SRC_DIR)/Bsw/PRINT/module.mk
 # -include $(SRC_DIR)/Appl/LEDApp/module.mk
 # -include $(SRC_DIR)/module.mk
+
+## --------------------------------------------------------------------------
+# End of Makefile

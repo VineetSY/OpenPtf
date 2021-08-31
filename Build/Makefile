@@ -42,7 +42,7 @@ $(OBJ_DIR)/%.o : %.c
 
 ## * clean	:Remove all from the results dir
 clean :
-	rm -rf ./bin/* ./obj/*
+	rm -rf $(BIN_DIR)/* $(OBJ_DIR)/* $(DEP_DIR)/*
 
 # Help will read this makefile itself and look for comments that start with ##
 .PHONY : help
