@@ -35,7 +35,7 @@ $(BIN) : $(OBJS)
 $(OBJ_DIR)/%.o : %.c
 # this whole recipe is wrong, but right now only this works.
 	@echo Building $<
-	$(CC) $< $(CFLAGS) -c $(addprefix -I,$(include_dirs)) $(unknown_flags) -o $@
+	$(CC) $< $(CFLAGS) -c $(addprefix -I,$(include_dirs)) $(CC_DEP) -o $@
 # %.o : $(SRC_DIR)/%.c
 # 	$(CC) $(CFLAGS) -c $< -o $@
 
@@ -53,11 +53,7 @@ help : Makefile
 .PHONY : test
 test :
 #	@echo $(addprefix -I,$(include_dirs))
-	@echo $(SRCS)
 	@echo "---------------------------------------------------------------------------"
-	@echo $(OBJS)
-	@echo "---------------------------------------------------------------------------"
-	@echo $(DEPS)
 
 ## --------------------------------------------------------------------------
 # End of Makefile

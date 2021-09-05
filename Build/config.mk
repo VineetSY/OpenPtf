@@ -32,8 +32,9 @@ FPU:=-mfpu=fpv4-sp-d16
 FPU_ABI:=-mfloat-abi=hard
 # Instruction Set
 ISA:=-mthumb
+# Flags for generating dependency files from compiler
+CC_DEP=-MMD -MP -MF"$(DEP_DIR)/$*.d" -MT"$(OBJ_DIR)/$*.o" $(CC_SPCS) $(FPU) $(FPU_ABI) $(ISA)
 CFLAGS:=-mcpu=$(MACH) -std=$(LANG_STD) $(DBG_LVL) -D$(TARGET) $(OPT_LVL) $(FUNC_SECT) $(DATA_SECT) $(WARN_LVL) $(STK_USG)
-unknown_flags=-MMD -MP -MF"$(DEP_DIR)/%.d" -MT"$(DEP_DIR)/%.o" $(CC_SPCS) $(FPU) $(FPU_ABI) $(ISA)
 
 # --------------------------------------------------------------------------- #
 # Directories and paths
@@ -70,7 +71,8 @@ OBJS:=$(addprefix $(OBJ_DIR)/,$(notdir $(patsubst %.c, %.o, $(C_SRCS)) $(patsubs
 # in OBJS with .d and then take the file name part
 # without the directory part, and prefix them with
 # DEP_DIR path
-DEPS:=$(addprefix $(DEP_DIR)/,$(notdir $(patsubst %.o, %.d, $(OBJS))))
+DEPS:=$(OBJS:.o=.d)
+# DEPS:=$(addprefix $(DEP_DIR)/,$(notdir $(patsubst %.o, %.d, $(OBJS))))
 BIN:=$(BIN_DIR)/OpenPtf.bin
 ELF:=$(BIN_DIR)/OpenPtf.elf
 
