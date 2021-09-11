@@ -21,6 +21,7 @@ include modules.mk
 
 # Add all include dirs to vpath to search for c source files
 vpath %.c $(include_dirs)
+vpath %.s $(include_dirs)
 ## Available Targets:
 ## * all		:Build everything
 .PHONY : all
@@ -28,6 +29,7 @@ all : $(BIN)
 
 # Rule for building main binary
 $(BIN) : $(OBJS)
+	@echo "-------------------------build elf--------------------------------------------------"
 	$(CC) $(CFLAGS) $(OBJS) -o $@
 
 # rule for compiling C files
@@ -38,6 +40,12 @@ $(OBJ_DIR)/%.o : %.c
 	$(CC) $< $(CFLAGS) -c $(addprefix -I,$(include_dirs)) $(CC_DEP) -o $@
 # %.o : $(SRC_DIR)/%.c
 # 	$(CC) $(CFLAGS) -c $< -o $@
+
+# rule for compiling assembly files
+$(OBJ_DIR)/%.o: %.s
+	@echo "--------------------------asm start-------------------------------------------------"
+	$(CC) -mcpu=cortex-m4 -g3 -DSTM32L476xx -c -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -x assembler-with-cpp -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@" "$<"
+	@echo "---------------------------asm end------------------------------------------------"
 
 
 ## * clean	:Remove all from the results dir
