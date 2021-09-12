@@ -34,8 +34,14 @@ FPU_ABI:=-mfloat-abi=hard
 ISA:=-mthumb
 # Flags for generating dependency files from compiler
 CC_DEP=-MMD -MP -MF"$(DEP_DIR)/$*.d" -MT"$(OBJ_DIR)/$*.o" $(CC_SPCS) $(FPU) $(FPU_ABI) $(ISA)
+# Extra flags to give to the C compiler.
 CFLAGS:=-mcpu=$(MACH) -std=$(LANG_STD) $(DBG_LVL) -D$(TARGET) $(OPT_LVL) $(FUNC_SECT) $(DATA_SECT) $(WARN_LVL) $(STK_USG)
-
+# Extra flags to give to the C preprocessor
+CPPFLAGS:= 
+# Extra flags to give to the assembler
+ASFLAGS=-mcpu=$(MACH) $(DBG_LVL) -DSTM32L476xx -c -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -x assembler-with-cpp -MMD -MP -MF"$(DEP_DIR)/$*.d" -MT"$(OBJ_DIR)/$*.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb
+# Extra flags to give to compilers when they are supposed to invoke the linker
+LDFLAGS:=
 # --------------------------------------------------------------------------- #
 # Directories and paths
 # Source Directory

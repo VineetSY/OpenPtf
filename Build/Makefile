@@ -29,7 +29,7 @@ all : $(BIN)
 
 # Rule for building main binary
 $(BIN) : $(OBJS)
-	@echo "-------------------------build elf--------------------------------------------------"
+	@echo "-------------------------build elf----------------------------------------------"
 	$(CC) $(CFLAGS) $(OBJS) -o $@
 
 # rule for compiling C files
@@ -44,7 +44,7 @@ $(OBJ_DIR)/%.o : %.c
 # rule for compiling assembly files
 $(OBJ_DIR)/%.o: %.s
 	@echo "--------------------------asm start-------------------------------------------------"
-	$(CC) -mcpu=cortex-m4 -g3 -DSTM32L476xx -c -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -x assembler-with-cpp -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@" "$<"
+	$(CC) $(ASFLAGS) -o "$@" "$<"
 	@echo "---------------------------asm end------------------------------------------------"
 
 
@@ -60,7 +60,7 @@ help : Makefile
 
 .PHONY : test
 test :
-#	@echo $(addprefix -I,$(include_dirs))
+	@echo $(CPP)
 	@echo "---------------------------------------------------------------------------"
 
 ## --------------------------------------------------------------------------
